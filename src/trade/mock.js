@@ -24,7 +24,7 @@ const BASES = {
   'armour.shield': { str: 'Vaal Tower Shield' }, 'armour.focus': { int: 'Hallowed Focus' }, 'armour.quiver': { dex: 'Primed Quiver' },
   'accessory.belt': 'Utility Belt', 'accessory.ring': ['Sapphire Ring', 'Ruby Ring', 'Topaz Ring', 'Amethyst Ring', 'Gold Ring'],
   'accessory.amulet': ['Stellar Amulet', 'Gold Amulet', 'Azure Amulet', 'Amber Amulet'],
-  'weapon.bow': 'Gemini Bow', 'weapon.wand': 'Wrath Wand', 'weapon.onemace': 'Marauding Mace', 'weapon.warstaff': 'Striking Quarterstaff', 'weapon.sceptre': 'Omen Sceptre',
+  'weapon.bow': 'Gemini Bow', 'weapon.spear': 'Flying Spear', 'weapon.crossbow': 'Siege Crossbow', 'weapon.talisman': 'Fury Talisman', 'weapon.twomace': 'Ironwood Greathammer', 'armour.buckler': 'Ornate Buckler', 'weapon.wand': 'Wrath Wand', 'weapon.onemace': 'Marauding Mace', 'weapon.warstaff': 'Striking Quarterstaff', 'weapon.sceptre': 'Omen Sceptre',
 };
 const DEF_RANGE = { 'armour.chest': [300, 900], 'armour.helmet': [120, 400], 'armour.gloves': [80, 300], 'armour.boots': [80, 300], 'armour.focus': [80, 300], 'armour.shield': [0, 0], 'armour.quiver': [0, 0] };
 

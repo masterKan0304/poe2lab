@@ -1,0 +1,1750 @@
+{
+ "source": "poe2db.tw",
+ "generated": "2026-11-27",
+ "classes": [
+  {
+   "en": "Deadeye",
+   "ko": "데드아이",
+   "base": "Ranger",
+   "baseKo": "레인저"
+  },
+  {
+   "en": "Pathfinder",
+   "ko": "패스파인더",
+   "base": "Ranger",
+   "baseKo": "레인저"
+  },
+  {
+   "en": "Amazon",
+   "ko": "아마존",
+   "base": "Huntress",
+   "baseKo": "헌트리스"
+  },
+  {
+   "en": "Spirit Walker",
+   "ko": "스피릿 워커",
+   "base": "Huntress",
+   "baseKo": "헌트리스"
+  },
+  {
+   "en": "Ritualist",
+   "ko": "리추얼리스트",
+   "base": "Huntress",
+   "baseKo": "헌트리스"
+  },
+  {
+   "en": "Martial Artist",
+   "ko": "마셜 아티스트",
+   "base": "Monk",
+   "baseKo": "몽크"
+  },
+  {
+   "en": "Invoker",
+   "ko": "인보커",
+   "base": "Monk",
+   "baseKo": "몽크"
+  },
+  {
+   "en": "Acolyte of Chayula",
+   "ko": "애컬라이트 오브 차율라",
+   "base": "Monk",
+   "baseKo": "몽크"
+  },
+  {
+   "en": "Infernalist",
+   "ko": "인퍼널리스트",
+   "base": "Witch",
+   "baseKo": "위치"
+  },
+  {
+   "en": "Blood Mage",
+   "ko": "블러드 메이지",
+   "base": "Witch",
+   "baseKo": "위치"
+  },
+  {
+   "en": "Lich",
+   "ko": "리치",
+   "base": "Witch",
+   "baseKo": "위치"
+  },
+  {
+   "en": "Abyssal Lich",
+   "ko": "심연의 리치",
+   "base": "Witch",
+   "baseKo": "위치"
+  },
+  {
+   "en": "Stormweaver",
+   "ko": "스톰위버",
+   "base": "Sorceress",
+   "baseKo": "소서리스"
+  },
+  {
+   "en": "Chronomancer",
+   "ko": "크로노맨서",
+   "base": "Sorceress",
+   "baseKo": "소서리스"
+  },
+  {
+   "en": "Disciple of Varashta",
+   "ko": "디사이플 오브 바라시타",
+   "base": "Sorceress",
+   "baseKo": "소서리스"
+  },
+  {
+   "en": "Titan",
+   "ko": "타이탄",
+   "base": "Warrior",
+   "baseKo": "워리어"
+  },
+  {
+   "en": "Warbringer",
+   "ko": "워브링어",
+   "base": "Warrior",
+   "baseKo": "워리어"
+  },
+  {
+   "en": "Smith of Kitava",
+   "ko": "스미스 오브 키타바",
+   "base": "Warrior",
+   "baseKo": "워리어"
+  },
+  {
+   "en": "Tactician",
+   "ko": "택티션",
+   "base": "Mercenary",
+   "baseKo": "머서너리"
+  },
+  {
+   "en": "Witchhunter",
+   "ko": "위치헌터",
+   "base": "Mercenary",
+   "baseKo": "머서너리"
+  },
+  {
+   "en": "Gemling Legionnaire",
+   "ko": "젬링 리저네어",
+   "base": "Mercenary",
+   "baseKo": "머서너리"
+  },
+  {
+   "en": "Oracle",
+   "ko": "오라클",
+   "base": "Druid",
+   "baseKo": "드루이드"
+  },
+  {
+   "en": "Shaman",
+   "ko": "샤먼",
+   "base": "Druid",
+   "baseKo": "드루이드"
+  }
+ ],
+ "skills": [
+  {
+   "en": "Abyssal Pact",
+   "ko": "심연의 맹약"
+  },
+  {
+   "en": "Acidic Concoction",
+   "ko": "산성 혼합물"
+  },
+  {
+   "en": "Alchemist's Boon",
+   "ko": "연금술사의 은혜"
+  },
+  {
+   "en": "Align Fate",
+   "ko": "운명 정렬"
+  },
+  {
+   "en": "Ancestral Cry",
+   "ko": "선대의 함성"
+  },
+  {
+   "en": "Ancestral Spirits",
+   "ko": "선대의 혼백"
+  },
+  {
+   "en": "Ancestral Warrior Totem",
+   "ko": "선대의 전사 토템"
+  },
+  {
+   "en": "Animus Exchange",
+   "ko": "아니무스 교환"
+  },
+  {
+   "en": "Animus Splinters",
+   "ko": "아니무스 파편"
+  },
+  {
+   "en": "Apocalypse",
+   "ko": "종말"
+  },
+  {
+   "en": "Arc",
+   "ko": "연쇄 번개"
+  },
+  {
+   "en": "Archmage",
+   "ko": "대마법사"
+  },
+  {
+   "en": "Archon of Chayula",
+   "ko": "아콘 오브 차율라"
+  },
+  {
+   "en": "Arctic Armour",
+   "ko": "한기의 방어구"
+  },
+  {
+   "en": "Arctic Howl",
+   "ko": "한기의 울부짖음"
+  },
+  {
+   "en": "Armour Breaker",
+   "ko": "방어구 파괴자"
+  },
+  {
+   "en": "Armour Piercing Rounds",
+   "ko": "방어구 관통 탄환"
+  },
+  {
+   "en": "Artillery Ballista",
+   "ko": "포대 쇠뇌"
+  },
+  {
+   "en": "Attrition",
+   "ko": "소모"
+  },
+  {
+   "en": "Axe Slash",
+   "ko": "도끼 베기"
+  },
+  {
+   "en": "Azmerian Swarms",
+   "ko": "아즈메리 무리"
+  },
+  {
+   "en": "Azmerian Wolf",
+   "ko": "아즈메리 늑대"
+  },
+  {
+   "en": "Ball Lightning",
+   "ko": "구형 번개"
+  },
+  {
+   "en": "Barkskin",
+   "ko": "껍질피부"
+  },
+  {
+   "en": "Barrage",
+   "ko": "연발 사격"
+  },
+  {
+   "en": "Barrier Invocation",
+   "ko": "방어 기원"
+  },
+  {
+   "en": "Berserk",
+   "ko": "광폭"
+  },
+  {
+   "en": "Bind Spectre",
+   "ko": "망령 속박"
+  },
+  {
+   "en": "Bitter Dead",
+   "ko": "원통한 망자"
+  },
+  {
+   "en": "Black Powder Blitz",
+   "ko": "검은 화약 공세"
+  },
+  {
+   "en": "Blasphemy",
+   "ko": "신성 모독"
+  },
+  {
+   "en": "Bleeding Concoction",
+   "ko": "출혈의 혼합물"
+  },
+  {
+   "en": "Blink",
+   "ko": "점멸"
+  },
+  {
+   "en": "Blood Boil",
+   "ko": "피 종기"
+  },
+  {
+   "en": "Blood Hunt",
+   "ko": "피의 사냥"
+  },
+  {
+   "en": "Bloodhound's Mark",
+   "ko": "피사냥개의 징표"
+  },
+  {
+   "en": "Bone Blast",
+   "ko": "뼈 폭발"
+  },
+  {
+   "en": "Bone Cage",
+   "ko": "뼈 창살"
+  },
+  {
+   "en": "Bone Offering",
+   "ko": "뼈 공물"
+  },
+  {
+   "en": "Boneshatter",
+   "ko": "뼈 박살"
+  },
+  {
+   "en": "Bonestorm",
+   "ko": "뼈 폭풍"
+  },
+  {
+   "en": "Bow Shot",
+   "ko": "활 사격"
+  },
+  {
+   "en": "Briarpatch",
+   "ko": "가시밭"
+  },
+  {
+   "en": "Bursting Fen Toad",
+   "ko": "터지는 늪 두꺼비"
+  },
+  {
+   "en": "Cackling Companions",
+   "ko": "하이에나 반려수"
+  },
+  {
+   "en": "Called Shots",
+   "ko": "지정 사격"
+  },
+  {
+   "en": "Cast on Block",
+   "ko": "막기 시 시전"
+  },
+  {
+   "en": "Cast on Charm Use",
+   "ko": "호신부 사용 시 시전"
+  },
+  {
+   "en": "Cast on Critical",
+   "ko": "치명타 시 시전"
+  },
+  {
+   "en": "Cast on Dodge",
+   "ko": "회피 구르기 시 시전"
+  },
+  {
+   "en": "Cast on Elemental Ailment",
+   "ko": "원소 상태 이상 시 시전"
+  },
+  {
+   "en": "Cast on Minion Death",
+   "ko": "소환수 사망 시 시전"
+  },
+  {
+   "en": "Chaos Bolt",
+   "ko": "카오스 화살"
+  },
+  {
+   "en": "Chaotic Surge",
+   "ko": "혼돈의 쇄도"
+  },
+  {
+   "en": "Charge Regulation",
+   "ko": "충전 제어"
+  },
+  {
+   "en": "Charged Staff",
+   "ko": "충전 지팡이"
+  },
+  {
+   "en": "Claw Stab",
+   "ko": "클로 찌르기"
+  },
+  {
+   "en": "Cluster Grenade",
+   "ko": "집속 유탄"
+  },
+  {
+   "en": "Coiling Bolts",
+   "ko": "똬리를 트는 볼트"
+  },
+  {
+   "en": "Combat Frenzy",
+   "ko": "전투 격분"
+  },
+  {
+   "en": "Comet",
+   "ko": "혜성"
+  },
+  {
+   "en": "Conductive Runes",
+   "ko": "전도성 룬"
+  },
+  {
+   "en": "Consecrate",
+   "ko": "신성화"
+  },
+  {
+   "en": "Contagion",
+   "ko": "전염"
+  },
+  {
+   "en": "Convalescence",
+   "ko": "요양"
+  },
+  {
+   "en": "Crackling Palm",
+   "ko": "치직대는 손바닥"
+  },
+  {
+   "en": "Cross Slash",
+   "ko": "십자 베기"
+  },
+  {
+   "en": "Crossbow Shot",
+   "ko": "석궁 사격"
+  },
+  {
+   "en": "Crushing Fear",
+   "ko": "타쇄하는 공포"
+  },
+  {
+   "en": "Cull The Weak",
+   "ko": "약자 솎아내기"
+  },
+  {
+   "en": "Dagger Stab",
+   "ko": "단검 찌르기"
+  },
+  {
+   "en": "Dark Effigy",
+   "ko": "어둠의 제웅"
+  },
+  {
+   "en": "Dark Pact",
+   "ko": "어둠의 서약"
+  },
+  {
+   "en": "Decompose",
+   "ko": "부패"
+  },
+  {
+   "en": "Defiance Banner",
+   "ko": "저항의 깃발"
+  },
+  {
+   "en": "Demon Form",
+   "ko": "악마 형상"
+  },
+  {
+   "en": "Demon Magus",
+   "ko": "Demon Magus"
+  },
+  {
+   "en": "Despair",
+   "ko": "절망"
+  },
+  {
+   "en": "Detonate Dead",
+   "ko": "시체 폭발"
+  },
+  {
+   "en": "Detonate Living",
+   "ko": "생체 폭발"
+  },
+  {
+   "en": "Detonating Arrow",
+   "ko": "폭발 화살"
+  },
+  {
+   "en": "Devour",
+   "ko": "포식"
+  },
+  {
+   "en": "Discipline",
+   "ko": "단련"
+  },
+  {
+   "en": "Disengage",
+   "ko": "철수"
+  },
+  {
+   "en": "Dread Banner",
+   "ko": "공포의 깃발"
+  },
+  {
+   "en": "Earthquake",
+   "ko": "지진"
+  },
+  {
+   "en": "Earthshatter",
+   "ko": "지면 분쇄"
+  },
+  {
+   "en": "Electrocuting Arrow",
+   "ko": "전기 처형의 화살"
+  },
+  {
+   "en": "Elemental Conflux",
+   "ko": "원소 융합"
+  },
+  {
+   "en": "Elemental Expression",
+   "ko": "원소 표현"
+  },
+  {
+   "en": "Elemental Invocation",
+   "ko": "원소 기원"
+  },
+  {
+   "en": "Elemental Storm",
+   "ko": "원소 폭풍"
+  },
+  {
+   "en": "Elemental Sundering",
+   "ko": "원소 작렬"
+  },
+  {
+   "en": "Elemental Surge",
+   "ko": "원소 쇄도"
+  },
+  {
+   "en": "Elemental Weakness",
+   "ko": "원소 약화"
+  },
+  {
+   "en": "Ember Fusillade",
+   "ko": "불씨 일제 사격"
+  },
+  {
+   "en": "Emergency Reload",
+   "ko": "비상 재장전"
+  },
+  {
+   "en": "Encase in Jade",
+   "ko": "비취에 갇힘"
+  },
+  {
+   "en": "Enervating Nova",
+   "ko": "피폐의 폭발"
+  },
+  {
+   "en": "Enfeeble",
+   "ko": "쇠약화"
+  },
+  {
+   "en": "Entangle",
+   "ko": "얽어매기"
+  },
+  {
+   "en": "Escape Shot",
+   "ko": "탈출 사격"
+  },
+  {
+   "en": "Essence Drain",
+   "ko": "정수 흡수"
+  },
+  {
+   "en": "Eternal March",
+   "ko": "영원한 행진"
+  },
+  {
+   "en": "Eternal Rage",
+   "ko": "영원한 격노"
+  },
+  {
+   "en": "Explosive Concoction",
+   "ko": "폭발성 혼합물"
+  },
+  {
+   "en": "Explosive Grenade",
+   "ko": "폭발 유탄"
+  },
+  {
+   "en": "Explosive Shot",
+   "ko": "폭발성 사격"
+  },
+  {
+   "en": "Explosive Spear",
+   "ko": "폭발 창"
+  },
+  {
+   "en": "Explosive Transmutation",
+   "ko": "폭발성 변형"
+  },
+  {
+   "en": "Exsanguinate",
+   "ko": "방혈"
+  },
+  {
+   "en": "Eye of Winter",
+   "ko": "겨울의 눈"
+  },
+  {
+   "en": "Falling Thunder",
+   "ko": "떨어지는 천둥"
+  },
+  {
+   "en": "Fangs of Frost",
+   "ko": "서리의 송곳니"
+  },
+  {
+   "en": "Feast of Flesh",
+   "ko": "육체의 연회"
+  },
+  {
+   "en": "Feral Invocation",
+   "ko": "야생의 기원"
+  },
+  {
+   "en": "Ferocious Roar",
+   "ko": "사나운 포효"
+  },
+  {
+   "en": "Fire Spell on Hit",
+   "ko": "명중 시 화염 주문"
+  },
+  {
+   "en": "Fireball",
+   "ko": "화염구"
+  },
+  {
+   "en": "Firebolt",
+   "ko": "화염 화살"
+  },
+  {
+   "en": "Firestorm",
+   "ko": "화염 폭풍"
+  },
+  {
+   "en": "Flail Strike",
+   "ko": "도리깨 타격"
+  },
+  {
+   "en": "Flame Breath",
+   "ko": "화염 숨결"
+  },
+  {
+   "en": "Flame Wall",
+   "ko": "화염 벽"
+  },
+  {
+   "en": "Flameblast",
+   "ko": "화염파"
+  },
+  {
+   "en": "Flash Grenade",
+   "ko": "섬광 유탄"
+  },
+  {
+   "en": "Flicker Strike",
+   "ko": "점멸 타격"
+  },
+  {
+   "en": "Forge Hammer",
+   "ko": "대장간 망치"
+  },
+  {
+   "en": "Fortifying Cry",
+   "ko": "보강하는 함성"
+  },
+  {
+   "en": "Fragmentation Rounds",
+   "ko": "파편 탄환"
+  },
+  {
+   "en": "Fragments Of The Past",
+   "ko": "과거의 조각"
+  },
+  {
+   "en": "Freezing Mark",
+   "ko": "동결의 징표"
+  },
+  {
+   "en": "Freezing Salvo",
+   "ko": "얼어붙는 포화"
+  },
+  {
+   "en": "Freezing Shards",
+   "ko": "동결의 파편"
+  },
+  {
+   "en": "Frost Bomb",
+   "ko": "서리 폭탄"
+  },
+  {
+   "en": "Frost Darts",
+   "ko": "서리 화살침"
+  },
+  {
+   "en": "Frost Wall",
+   "ko": "서리 방벽"
+  },
+  {
+   "en": "Frostbolt",
+   "ko": "서리 구체"
+  },
+  {
+   "en": "Frostflame Nova",
+   "ko": "서리불꽃 폭발"
+  },
+  {
+   "en": "Frozen Locus",
+   "ko": "얼어붙은 궤적"
+  },
+  {
+   "en": "Fulminating Concoction",
+   "ko": "전격의 혼합물"
+  },
+  {
+   "en": "Fulmination",
+   "ko": "노호"
+  },
+  {
+   "en": "Furious Slam",
+   "ko": "분개한 강타"
+  },
+  {
+   "en": "Fury of the Mountain",
+   "ko": "산의 광분"
+  },
+  {
+   "en": "Future-Past",
+   "ko": "미래-과거"
+  },
+  {
+   "en": "Galvanic Field",
+   "ko": "충격장"
+  },
+  {
+   "en": "Galvanic Shards",
+   "ko": "충격 파편"
+  },
+  {
+   "en": "Gas Arrow",
+   "ko": "가스 화살"
+  },
+  {
+   "en": "Gas Grenade",
+   "ko": "가스 유탄"
+  },
+  {
+   "en": "Gathering Storm",
+   "ko": "몰려드는 폭풍"
+  },
+  {
+   "en": "Gemini Surge",
+   "ko": "쌍둥이 쇄도"
+  },
+  {
+   "en": "Ghost Dance",
+   "ko": "혼의 춤"
+  },
+  {
+   "en": "Glacial Bolt",
+   "ko": "빙하 볼트"
+  },
+  {
+   "en": "Glacial Cascade",
+   "ko": "빙하 폭포"
+  },
+  {
+   "en": "Glacial Lance",
+   "ko": "빙하 창"
+  },
+  {
+   "en": "Grim Feast",
+   "ko": "으스스한 연회"
+  },
+  {
+   "en": "Grim Pillars",
+   "ko": "으스스한 기둥"
+  },
+  {
+   "en": "Hailstorm Rounds",
+   "ko": "우박폭풍 탄환"
+  },
+  {
+   "en": "Hammer of the Gods",
+   "ko": "신들의 망치"
+  },
+  {
+   "en": "Hand of Chayula",
+   "ko": "차율라의 손"
+  },
+  {
+   "en": "Harbinger of Madness",
+   "ko": "광기의 선구자"
+  },
+  {
+   "en": "Heart of Ice",
+   "ko": "얼음의 심장"
+  },
+  {
+   "en": "Herald of Ash",
+   "ko": "재의 전령"
+  },
+  {
+   "en": "Herald of Blood",
+   "ko": "피의 전령"
+  },
+  {
+   "en": "Herald of Ice",
+   "ko": "얼음의 전령"
+  },
+  {
+   "en": "Herald of Plague",
+   "ko": "역병의 전령"
+  },
+  {
+   "en": "Herald of the Royal Queen",
+   "ko": "위풍당당한 여왕의 전령"
+  },
+  {
+   "en": "Herald of Thunder",
+   "ko": "천둥의 전령"
+  },
+  {
+   "en": "Hexblast",
+   "ko": "사술 폭발"
+  },
+  {
+   "en": "High Velocity Rounds",
+   "ko": "고속 탄환"
+  },
+  {
+   "en": "Hollow Focus",
+   "ko": "공허의 집중"
+  },
+  {
+   "en": "Hollow Form",
+   "ko": "공허의 형상"
+  },
+  {
+   "en": "Hollow Resonance",
+   "ko": "공허의 공명"
+  },
+  {
+   "en": "Hollow Shell",
+   "ko": "공허의 껍데기"
+  },
+  {
+   "en": "Ice Nova",
+   "ko": "얼음 폭발"
+  },
+  {
+   "en": "Ice Shards",
+   "ko": "얼음 파편"
+  },
+  {
+   "en": "Ice Shot",
+   "ko": "얼음 화살"
+  },
+  {
+   "en": "Ice Strike",
+   "ko": "얼음 타격"
+  },
+  {
+   "en": "Ice-Tipped Arrows",
+   "ko": "얼음촉 화살"
+  },
+  {
+   "en": "Icestorm",
+   "ko": "얼음태풍"
+  },
+  {
+   "en": "Impurity",
+   "ko": "부정함"
+  },
+  {
+   "en": "Incendiary Shot",
+   "ko": "소이 사격"
+  },
+  {
+   "en": "Incinerate",
+   "ko": "소각"
+  },
+  {
+   "en": "Inevitable Agony",
+   "ko": "피할 수 없는 고뇌"
+  },
+  {
+   "en": "Infernal Cry",
+   "ko": "지옥불 함성"
+  },
+  {
+   "en": "Into the Breach",
+   "ko": "균열 속으로"
+  },
+  {
+   "en": "Iron Ward",
+   "ko": "철의 수호"
+  },
+  {
+   "en": "Kelari, the Tainted Sands",
+   "ko": "더럽혀진 사막 켈라리"
+  },
+  {
+   "en": "Kelari's Deception",
+   "ko": "켈라리의 기만"
+  },
+  {
+   "en": "Kelari's Judgment",
+   "ko": "켈라리의 심판"
+  },
+  {
+   "en": "Kelari's Malediction",
+   "ko": "켈라리의 악담"
+  },
+  {
+   "en": "Killing Palm",
+   "ko": "살상 장법"
+  },
+  {
+   "en": "Leap Slam",
+   "ko": "도약 강타"
+  },
+  {
+   "en": "Leylines",
+   "ko": "지맥"
+  },
+  {
+   "en": "Life Remnants",
+   "ko": "생명 잔류물"
+  },
+  {
+   "en": "Lightning Arrow",
+   "ko": "번개 화살"
+  },
+  {
+   "en": "Lightning Bolt",
+   "ko": "낙뢰"
+  },
+  {
+   "en": "Lightning Conduit",
+   "ko": "번개 도관"
+  },
+  {
+   "en": "Lightning Rod",
+   "ko": "피뢰침"
+  },
+  {
+   "en": "Lightning Spear",
+   "ko": "번개 창"
+  },
+  {
+   "en": "Lightning Warp",
+   "ko": "번개 차원 이동"
+  },
+  {
+   "en": "Lingering Illusion",
+   "ko": "지속되는 환상"
+  },
+  {
+   "en": "Living Bomb",
+   "ko": "살아있는 폭탄"
+  },
+  {
+   "en": "Lunar Assault",
+   "ko": "달의 공격"
+  },
+  {
+   "en": "Lunar Blessing",
+   "ko": "달의 축복"
+  },
+  {
+   "en": "Mace Strike",
+   "ko": "철퇴 타격"
+  },
+  {
+   "en": "Magma Barrier",
+   "ko": "마그마 장벽"
+  },
+  {
+   "en": "Magnetic Salvo",
+   "ko": "자성 포화"
+  },
+  {
+   "en": "Malice",
+   "ko": "적의"
+  },
+  {
+   "en": "Mana Drain",
+   "ko": "마나 고갈"
+  },
+  {
+   "en": "Mana Remnants",
+   "ko": "마나 잔류물"
+  },
+  {
+   "en": "Mana Tempest",
+   "ko": "마나 폭풍"
+  },
+  {
+   "en": "Manifest Weapon",
+   "ko": "무기 현현"
+  },
+  {
+   "en": "Mantra of Destruction",
+   "ko": "파괴의 주문"
+  },
+  {
+   "en": "Maul",
+   "ko": "사나운 발톱"
+  },
+  {
+   "en": "Meditate",
+   "ko": "명상"
+  },
+  {
+   "en": "Midnight Zenith",
+   "ko": "심야의 북극성"
+  },
+  {
+   "en": "Mirage Archer",
+   "ko": "신기루 궁수"
+  },
+  {
+   "en": "Mirage Deadeye",
+   "ko": "신기루 명사수"
+  },
+  {
+   "en": "Mirror of Refraction",
+   "ko": "굴절의 거울"
+  },
+  {
+   "en": "Mist Raven",
+   "ko": "연무의 큰까마귀"
+  },
+  {
+   "en": "Molten Blast",
+   "ko": "녹아내린 폭발"
+  },
+  {
+   "en": "Molten Crash",
+   "ko": "용암 충격"
+  },
+  {
+   "en": "Molten Shower",
+   "ko": "녹아내린 소나기"
+  },
+  {
+   "en": "Moment of Vulnerability",
+   "ko": "취약성의 순간"
+  },
+  {
+   "en": "Mortar Cannon",
+   "ko": "박격포 대포"
+  },
+  {
+   "en": "Navira, the Last Mirage",
+   "ko": "최후의 신기루 나비라"
+  },
+  {
+   "en": "Navira's Fracturing",
+   "ko": "나비라의 파열"
+  },
+  {
+   "en": "Navira's Oasis",
+   "ko": "나비라의 오아시스"
+  },
+  {
+   "en": "Navira's Well",
+   "ko": "나비라의 우물"
+  },
+  {
+   "en": "Oil Barrage",
+   "ko": "기름 포화"
+  },
+  {
+   "en": "Oil Grenade",
+   "ko": "기름 유탄"
+  },
+  {
+   "en": "Orb of Storms",
+   "ko": "폭풍 보주"
+  },
+  {
+   "en": "Overwhelming Presence",
+   "ko": "압도적인 존재감"
+  },
+  {
+   "en": "Pain Offering",
+   "ko": "고통의 공물"
+  },
+  {
+   "en": "Parry",
+   "ko": "흘려보내기"
+  },
+  {
+   "en": "Perfect Strike",
+   "ko": "완벽한 타격"
+  },
+  {
+   "en": "Permafrost Bolts",
+   "ko": "영구 결빙 볼트"
+  },
+  {
+   "en": "Phantasmal Arrow",
+   "ko": "환영의 화살"
+  },
+  {
+   "en": "Pinnacle of Power",
+   "ko": "힘의 정점"
+  },
+  {
+   "en": "Plague Bearer",
+   "ko": "독성 운반자"
+  },
+  {
+   "en": "Plasma Blast",
+   "ko": "플라스마 폭발"
+  },
+  {
+   "en": "Poisonburst Arrow",
+   "ko": "독 폭발 화살"
+  },
+  {
+   "en": "Pounce",
+   "ko": "급습"
+  },
+  {
+   "en": "Power Siphon",
+   "ko": "권능 착취"
+  },
+  {
+   "en": "Powered by Verisium",
+   "ko": "베리시움 동력 공급"
+  },
+  {
+   "en": "Primal Bounty",
+   "ko": "원시 하사품"
+  },
+  {
+   "en": "Primal Strikes",
+   "ko": "원시 타격"
+  },
+  {
+   "en": "Profane Ritual",
+   "ko": "부정한 의식"
+  },
+  {
+   "en": "Punch",
+   "ko": "주먹질"
+  },
+  {
+   "en": "Purity of Fire",
+   "ko": "불의 순수함"
+  },
+  {
+   "en": "Purity of Ice",
+   "ko": "얼음의 순수함"
+  },
+  {
+   "en": "Purity of Lightning",
+   "ko": "번개의 순수함"
+  },
+  {
+   "en": "Quarterstaff Strike",
+   "ko": "육척봉 타격"
+  },
+  {
+   "en": "Queen's Procession",
+   "ko": "여왕의 행진"
+  },
+  {
+   "en": "Raging Spirits",
+   "ko": "격노의 유령"
+  },
+  {
+   "en": "Rain of Arrows",
+   "ko": "화살비"
+  },
+  {
+   "en": "Rain of Blades",
+   "ko": "칼날의 비"
+  },
+  {
+   "en": "Raise Shield",
+   "ko": "방패 들기"
+  },
+  {
+   "en": "Raise Zombie",
+   "ko": "좀비 소환"
+  },
+  {
+   "en": "Rake",
+   "ko": "갈퀴질"
+  },
+  {
+   "en": "Rampage",
+   "ko": "광란"
+  },
+  {
+   "en": "Rapid Assault",
+   "ko": "신속한 공격"
+  },
+  {
+   "en": "Rapid Shot",
+   "ko": "신속한 사격"
+  },
+  {
+   "en": "Ravenous Swarm",
+   "ko": "굶주린 무리"
+  },
+  {
+   "en": "Reap",
+   "ko": "낫질"
+  },
+  {
+   "en": "Reaper's Invocation",
+   "ko": "수확자의 기원"
+  },
+  {
+   "en": "Refutation",
+   "ko": "부인"
+  },
+  {
+   "en": "Remnants of Kalguur",
+   "ko": "칼구르의 잔류물"
+  },
+  {
+   "en": "Rend",
+   "ko": "분리"
+  },
+  {
+   "en": "Repulsion",
+   "ko": "반발"
+  },
+  {
+   "en": "Requiem",
+   "ko": "진혼곡"
+  },
+  {
+   "en": "Resonating Shield",
+   "ko": "공명하는 방패"
+  },
+  {
+   "en": "Rhoa Mount",
+   "ko": "로아 탈것"
+  },
+  {
+   "en": "Righteous Descent",
+   "ko": "정의로운 강하"
+  },
+  {
+   "en": "Rite of Restoration",
+   "ko": "재생의 의례"
+  },
+  {
+   "en": "Ritual Sacrifice",
+   "ko": "의식 희생"
+  },
+  {
+   "en": "Rolling Magma",
+   "ko": "몰려오는 마그마"
+  },
+  {
+   "en": "Rolling Slam",
+   "ko": "몰려오는 강타"
+  },
+  {
+   "en": "Runic Reprieve",
+   "ko": "룬의 유예"
+  },
+  {
+   "en": "Runic Tempering",
+   "ko": "룬의 담금질"
+  },
+  {
+   "en": "Ruzhan, the Blazing Sword",
+   "ko": "불타는 검 루잔"
+  },
+  {
+   "en": "Ruzhan's Fury",
+   "ko": "루잔의 광분"
+  },
+  {
+   "en": "Ruzhan's Reckoning",
+   "ko": "루잔의 선고"
+  },
+  {
+   "en": "Ruzhan's Trap",
+   "ko": "루잔의 덫"
+  },
+  {
+   "en": "Sacrifice",
+   "ko": "희생"
+  },
+  {
+   "en": "Sanguine Revelry",
+   "ko": "핏빛 환락"
+  },
+  {
+   "en": "Savage Fury",
+   "ko": "야만적인 광분"
+  },
+  {
+   "en": "Scavenged Plating",
+   "ko": "주운 판금"
+  },
+  {
+   "en": "Seismic Cry",
+   "ko": "지진 함성"
+  },
+  {
+   "en": "Shard Scavenger",
+   "ko": "파편 청소부"
+  },
+  {
+   "en": "Shattering Concoction",
+   "ko": "산산조각의 혼합물"
+  },
+  {
+   "en": "Shattering Palm",
+   "ko": "격파 장법"
+  },
+  {
+   "en": "Shattering Spite",
+   "ko": "악의 파편"
+  },
+  {
+   "en": "Shield Charge",
+   "ko": "방패 돌진"
+  },
+  {
+   "en": "Shield Wall",
+   "ko": "방패의 벽"
+  },
+  {
+   "en": "Shockburst Rounds",
+   "ko": "감전 파열 탄환"
+  },
+  {
+   "en": "Shockchain Arrow",
+   "ko": "감전연쇄 화살"
+  },
+  {
+   "en": "Shockwave Totem",
+   "ko": "충격파 토템"
+  },
+  {
+   "en": "Shred",
+   "ko": "발기기"
+  },
+  {
+   "en": "Shroud",
+   "ko": "Shroud"
+  },
+  {
+   "en": "Siege Ballista",
+   "ko": "공성 쇠뇌"
+  },
+  {
+   "en": "Siege Cascade",
+   "ko": "공성 폭포"
+  },
+  {
+   "en": "Sigil of Power",
+   "ko": "힘의 부적"
+  },
+  {
+   "en": "Siphon Elements",
+   "ko": "원소 착취"
+  },
+  {
+   "en": "Siphoning Strike",
+   "ko": "착취 타격"
+  },
+  {
+   "en": "Skeletal Arsonist",
+   "ko": "해골 방화범"
+  },
+  {
+   "en": "Skeletal Brute",
+   "ko": "해골 돌격병"
+  },
+  {
+   "en": "Skeletal Cleric",
+   "ko": "해골 성직자"
+  },
+  {
+   "en": "Skeletal Frost Mage",
+   "ko": "해골 서리 마법사"
+  },
+  {
+   "en": "Skeletal Reaver",
+   "ko": "해골 강탈자"
+  },
+  {
+   "en": "Skeletal Sniper",
+   "ko": "해골 저격수"
+  },
+  {
+   "en": "Skeletal Storm Mage",
+   "ko": "해골 폭풍 마법사"
+  },
+  {
+   "en": "Skeletal Warrior",
+   "ko": "해골 전사"
+  },
+  {
+   "en": "Skyfall",
+   "ko": "하늘 붕괴"
+  },
+  {
+   "en": "Snap",
+   "ko": "돌발"
+  },
+  {
+   "en": "Snipe",
+   "ko": "저격"
+  },
+  {
+   "en": "Sniper's Mark",
+   "ko": "저격수의 징표"
+  },
+  {
+   "en": "Soaring Midnight",
+   "ko": "솟구치는 심야"
+  },
+  {
+   "en": "Solar Orb",
+   "ko": "태양의 보주"
+  },
+  {
+   "en": "Sorcery Ward",
+   "ko": "마술의 수호"
+  },
+  {
+   "en": "Soul Offering",
+   "ko": "영혼 공물"
+  },
+  {
+   "en": "Soulrend",
+   "ko": "영혼 분리"
+  },
+  {
+   "en": "Spark",
+   "ko": "전기불꽃"
+  },
+  {
+   "en": "Spear of Solaris",
+   "ko": "솔라리스의 창"
+  },
+  {
+   "en": "Spear Stab",
+   "ko": "창 찌르기"
+  },
+  {
+   "en": "Spear Throw",
+   "ko": "창 투척"
+  },
+  {
+   "en": "Spearfield",
+   "ko": "창의 지대"
+  },
+  {
+   "en": "Spell Totem",
+   "ko": "주문 토템"
+  },
+  {
+   "en": "Spellslinger",
+   "ko": "주문투척"
+  },
+  {
+   "en": "Spiral Volley",
+   "ko": "나선 사격 공세"
+  },
+  {
+   "en": "Spiraling Conspiracy",
+   "ko": "고조되는 음모"
+  },
+  {
+   "en": "Spirit Vessel",
+   "ko": "혼백 그릇"
+  },
+  {
+   "en": "Staggering Palm",
+   "ko": "충격 장법"
+  },
+  {
+   "en": "Stampede",
+   "ko": "쇄도"
+  },
+  {
+   "en": "Starborn Onslaught",
+   "ko": "별붙이 맹공"
+  },
+  {
+   "en": "Storm Lance",
+   "ko": "폭풍의 창"
+  },
+  {
+   "en": "Storm Wave",
+   "ko": "폭풍 파도"
+  },
+  {
+   "en": "Stormblast Bolts",
+   "ko": "태풍 파열 볼트"
+  },
+  {
+   "en": "Stormcaller Arrow",
+   "ko": "폭풍 소환사 화살"
+  },
+  {
+   "en": "Summon Infernal Hound",
+   "ko": "지옥불 사냥개 소환"
+  },
+  {
+   "en": "Sunder",
+   "ko": "산산조각"
+  },
+  {
+   "en": "Supercharged Slam",
+   "ko": "초과 충전 강타"
+  },
+  {
+   "en": "Supporting Fire",
+   "ko": "지원 사격"
+  },
+  {
+   "en": "Sword Slash",
+   "ko": "검 베기"
+  },
+  {
+   "en": "Tame Beast",
+   "ko": "짐승 길들이기"
+  },
+  {
+   "en": "Temper Weapon",
+   "ko": "무기 담금질"
+  },
+  {
+   "en": "Tempest Bell",
+   "ko": "폭풍의 종"
+  },
+  {
+   "en": "Tempest Flurry",
+   "ko": "폭풍의 질풍"
+  },
+  {
+   "en": "Temporal Chains",
+   "ko": "시간의 사슬"
+  },
+  {
+   "en": "Temporal Rift",
+   "ko": "시간의 균열"
+  },
+  {
+   "en": "The Stars Answer",
+   "ko": "별들의 응답"
+  },
+  {
+   "en": "Thrashing Vines",
+   "ko": "몸부림치는 덩굴"
+  },
+  {
+   "en": "Thundergod's Wrath",
+   "ko": "천둥신의 진노"
+  },
+  {
+   "en": "Thunderous Leap",
+   "ko": "천둥 같은 도약"
+  },
+  {
+   "en": "Thunderstorm",
+   "ko": "뇌우"
+  },
+  {
+   "en": "Time Freeze",
+   "ko": "시간 동결"
+  },
+  {
+   "en": "Time of Need",
+   "ko": "긴요한 시기"
+  },
+  {
+   "en": "Time Snap",
+   "ko": "시간 단절"
+  },
+  {
+   "en": "Tornado",
+   "ko": "회오리"
+  },
+  {
+   "en": "Tornado Shot",
+   "ko": "회오리 사격"
+  },
+  {
+   "en": "Toxic Domain",
+   "ko": "맹독성 영역"
+  },
+  {
+   "en": "Toxic Growth",
+   "ko": "맹독성 종양"
+  },
+  {
+   "en": "Trail of Caltrops",
+   "ko": "마름쇠의 발자취"
+  },
+  {
+   "en": "Trinity",
+   "ko": "삼위일체"
+  },
+  {
+   "en": "Triskelion Cascade",
+   "ko": "트리스켈리온의 폭포"
+  },
+  {
+   "en": "Twister",
+   "ko": "돌개바람"
+  },
+  {
+   "en": "Unbound Avatar",
+   "ko": "족쇄 풀린 화신"
+  },
+  {
+   "en": "Unearth",
+   "ko": "발굴"
+  },
+  {
+   "en": "Unleash",
+   "ko": "촉발"
+  },
+  {
+   "en": "Untether",
+   "ko": "연 끊기"
+  },
+  {
+   "en": "Valako's Charge",
+   "ko": "발라코의 책임"
+  },
+  {
+   "en": "Vaulting Impact",
+   "ko": "뜀틀 충격"
+  },
+  {
+   "en": "Verisium Manifestations",
+   "ko": "베리시움 현신"
+  },
+  {
+   "en": "Vine Arrow",
+   "ko": "덩굴 화살"
+  },
+  {
+   "en": "Virtuous Barrier",
+   "ko": "고결한 방어막"
+  },
+  {
+   "en": "Vivid Stampede",
+   "ko": "혈기 쇄도"
+  },
+  {
+   "en": "Void Illusion",
+   "ko": "공허 환상"
+  },
+  {
+   "en": "Volatile Dead",
+   "ko": "시체 불덩이"
+  },
+  {
+   "en": "Volcanic Fissure",
+   "ko": "화산 균열"
+  },
+  {
+   "en": "Volcano",
+   "ko": "화산"
+  },
+  {
+   "en": "Voltaic Barrier",
+   "ko": "전도성 방어막"
+  },
+  {
+   "en": "Voltaic Grenade",
+   "ko": "전도성 유탄"
+  },
+  {
+   "en": "Voltaic Mark",
+   "ko": "전도성 징표"
+  },
+  {
+   "en": "Vulnerability",
+   "ko": "취약성"
+  },
+  {
+   "en": "Walking Calamity",
+   "ko": "걸어다니는 대재난"
+  },
+  {
+   "en": "War Banner",
+   "ko": "전쟁 깃발"
+  },
+  {
+   "en": "Wardbound Minions",
+   "ko": "수호결속 소환수"
+  },
+  {
+   "en": "Wave of Frost",
+   "ko": "서리의 파도"
+  },
+  {
+   "en": "Whirling Assault",
+   "ko": "선회 공격"
+  },
+  {
+   "en": "Whirling Slash",
+   "ko": "소용돌이 베기"
+  },
+  {
+   "en": "Whirlwind Lance",
+   "ko": "와류 기병창"
+  },
+  {
+   "en": "Wild Protector",
+   "ko": "야생 보호자"
+  },
+  {
+   "en": "Wildwood's Gifts",
+   "ko": "야생림의 선물"
+  },
+  {
+   "en": "Wind Blast",
+   "ko": "바람 폭발"
+  },
+  {
+   "en": "Wind Dancer",
+   "ko": "바람의 무희"
+  },
+  {
+   "en": "Wind Serpent's Fury",
+   "ko": "바람 독사의 광분"
+  },
+  {
+   "en": "Wing Blast",
+   "ko": "날개 돌풍"
+  },
+  {
+   "en": "Wither",
+   "ko": "위축"
+  },
+  {
+   "en": "Withering Presence",
+   "ko": "고사시키는 존재"
+  },
+  {
+   "en": "Wolf Pack",
+   "ko": "늑대 무리"
+  }
+ ]
+}

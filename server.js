@@ -8,6 +8,7 @@ import { LiveTradeClient } from './src/trade/live.js';
 import { mockForProfiles } from './src/trade/mock.js';
 import { getExaltedRates, getLeagues } from './src/ninja/currency.js';
 import { planGear, DEFAULT_RES_SETTINGS } from './src/planner.js';
+import { I18N } from './src/i18n.js';
 
 let profiles = loadProfiles();
 
@@ -45,8 +46,14 @@ const server = http.createServer(async (req, res) => {
         slots: SLOTS.map(({ id, label }) => ({ id, label })),
         stats: STATS,
         resSettings: DEFAULT_RES_SETTINGS,
+        i18n: { classes: I18N.classes, skills: I18N.skills, source: I18N.source, generated: I18N.generated },
         profiles: profiles.map((p) => ({ id: p.id, class: p.class, skills: p.skills, sampleSize: p.sampleSize, source: p.source, typicalTargets: p.typicalTargets })),
       });
+    }
+
+    if (req.method === 'GET' && url.pathname === '/api/rates') {
+      const rates = await getExaltedRates(url.searchParams.get('league') || 'Standard');
+      return sendJson(res, 200, { divine: rates.divine, chaos: rates.chaos, fallback: rates._fallback || null });
     }
 
     if (req.method === 'POST' && url.pathname === '/api/plan') {

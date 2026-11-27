@@ -7,8 +7,10 @@
   "engines": { "node": ">=20" },
   "scripts": {
     "start": "node server.js",
-    "start:mock": "TRADE_MODE=mock node server.js",
+    "start:mock": "node server.js --mock",
     "test": "node --test test/*.test.js",
-    "verify": "node scripts/verify-trade.js"
+    "verify": "node scripts/verify-trade.js",
+    "i18n": "node scripts/build-i18n.js",
+    "simulate": "node scripts/simulate.js"
   }
 }

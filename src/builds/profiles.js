@@ -65,6 +65,34 @@ export function matchProfile(profiles, className, skills) {
   return { profile: best.profile, overlap: best.overlap };
 }
 
+// 샘플 프로필이 없는 전직용: 기본 직업별 무기만 정하고 나머지는 목표 능력치로만 찾는다.
+const BASE_WEAPONS = {
+  Ranger: { weapon1: { category: 'weapon.bow' }, weapon2: { category: 'armour.quiver', offhand: true } },
+  Huntress: { weapon1: { category: 'weapon.spear' }, weapon2: { category: 'armour.buckler', offhand: true } },
+  Monk: { weapon1: { category: 'weapon.warstaff' }, weapon2: { twoHanded: true } },
+  Witch: { weapon1: { category: 'weapon.wand' }, weapon2: { category: 'armour.focus', offhand: true } },
+  Sorceress: { weapon1: { category: 'weapon.wand' }, weapon2: { category: 'armour.focus', offhand: true } },
+  Warrior: { weapon1: { category: 'weapon.twomace' }, weapon2: { twoHanded: true } },
+  Mercenary: { weapon1: { category: 'weapon.crossbow' }, weapon2: { twoHanded: true } },
+  Druid: { weapon1: { category: 'weapon.talisman' }, weapon2: { twoHanded: true } },
+};
+const GENERIC_SLOTS = {
+  charm1: { baseType: 'Thawing Charm' }, charm2: { baseType: 'Staunching Charm' }, charm3: { baseType: 'Dousing Charm' },
+  flaskLife: { baseType: 'Ultimate Life Flask' }, flaskMana: { baseType: 'Ultimate Mana Flask' },
+};
+
+export function genericProfile(className, baseClass, skills = []) {
+  return {
+    id: `generic-${String(className).toLowerCase().replace(/\W+/g, '-')}`,
+    class: className,
+    skills,
+    sampleSize: 0,
+    source: 'generic',
+    typicalTargets: { life: 1000, fireRes: 75, coldRes: 75, lightRes: 75 },
+    slots: { ...GENERIC_SLOTS, ...(BASE_WEAPONS[baseClass] || BASE_WEAPONS.Ranger) },
+  };
+}
+
 /** 프로필 -> 슬롯별 요구사항 (필수 유니크, 핵심 옵션, 카테고리) */
 export function slotRequirements(profile) {
   const req = {};

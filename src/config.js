@@ -13,7 +13,8 @@ const contact = (process.env.POE2LAB_CONTACT || '').trim();
 
 export const config = {
   port: Number(process.env.PORT || 3000),
-  tradeMode: (process.env.TRADE_MODE || 'live').toLowerCase() === 'mock' ? 'mock' : 'live',
+  // npm run start:mock (--mock) 는 Windows 에서도 동작하도록 환경변수 대신 인자로 받음
+  tradeMode: process.argv.includes('--mock') || (process.env.TRADE_MODE || 'live').toLowerCase() === 'mock' ? 'mock' : 'live',
   poesessid: (process.env.POESESSID || '').trim(),
   // GGG: 서드파티 툴은 식별 가능한 User-Agent 를 보내야 함. ASCII 만 허용.
   userAgent: `poe2lab/0.1${contact ? ` (contact: ${contact.replace(/[^\x20-\x7e]/g, '')})` : ''}`,

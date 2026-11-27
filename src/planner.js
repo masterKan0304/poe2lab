@@ -1,6 +1,7 @@
 // 장비 설계 파이프라인: 빌드 매칭 -> 목표치 계산 -> 슬롯별 매물 검색(타협 포함) -> 세트 최적화
 import { SLOTS, STATS, STAT_IDS, slotStats } from './slots.js';
-import { matchProfile, slotRequirements } from './builds/profiles.js';
+import { matchProfile, slotRequirements, genericProfile } from './builds/profiles.js';
+import { classToEn, skillToEn, classInfo } from './i18n.js';
 import { itemStats, emptyStats, stripMarkup } from './trade/parse.js';
 import { optimize } from './optimizer.js';
 
@@ -13,6 +14,16 @@ export const DEFAULT_RES_SETTINGS = {
 };
 
 /** 장비에서 채워야 하는 양 계산 */
+// 옵션 한 줄의 일반적인 수치. 가중치를 "쓸모 있는 옵션 몇 줄짜리인가" 로 맞추는 데 사용
+// (필요량이 작은 능력치 — 예: 카오스 20% — 가 가중치를 독차지하지 않도록)
+const TYPICAL_ROLL = { life: 90, es: 150, ward: 40, mana: 70, fireRes: 30, coldRes: 30, lightRes: 30, chaosRes: 18, moveSpeed: 20 };
+
+export function slotWeights(statsOfSlot, needs, rollers) {
+  const w = {};
+  for (const k of statsOfSlot) if (needs[k]) w[k] = 1 / Math.max(needs[k] / rollers[k], TYPICAL_ROLL[k] || 1);
+  return w;
+}
+
 export function computeNeeds(targets, resSettings = DEFAULT_RES_SETTINGS) {
   const rs = { ...DEFAULT_RES_SETTINGS, ...resSettings, other: { ...DEFAULT_RES_SETTINGS.other, ...(resSettings?.other || {}) } };
   const needs = {};
@@ -62,10 +73,21 @@ function summarizeListing(result, priceEx, tradeUrl) {
 
 export async function planGear(input, { trade, profiles, rates, onProgress = () => {} }) {
   const notes = [];
-  const match = matchProfile(profiles, input.className, input.skills);
-  if (!match) return { ok: false, error: '직업/스킬과 일치하는 빌드 프로필이 없습니다. (현재 샘플 프로필만 있음 — 프로필 JSON 을 업로드할 수 있습니다)' };
+  // 한글로 입력해도 영문으로 정규화
+  const className = classToEn(input.className);
+  const skills = (input.skills || []).filter(Boolean).map(skillToEn);
+  if (!className) return { ok: false, error: '직업(전직)을 입력하세요.' };
+  let match = matchProfile(profiles, className, skills);
+  if (!match) {
+    const info = classInfo(className);
+    const sameClass = profiles.filter((p) => p.class.toLowerCase() === className.toLowerCase());
+    match = { profile: genericProfile(className, info?.base, skills), overlap: 0 };
+    notes.push(sameClass.length
+      ? `입력한 스킬과 겹치는 ${className} 빌드 프로필이 없어 일반 프로필로 검색합니다 (필수 장비·핵심 옵션 없이 목표 능력치만 사용)`
+      : `${className} 빌드 프로필이 없어 일반 프로필로 검색합니다 (필수 장비·핵심 옵션 없이 목표 능력치만 사용)`);
+  }
   const profile = match.profile;
-  if (match.overlap < (input.skills || []).filter(Boolean).length) notes.push(`스킬 ${match.overlap}/${input.skills.filter(Boolean).length}개 일치하는 프로필 "${profile.id}" 사용`);
+  if (profile.source !== 'generic' && match.overlap < skills.length) notes.push(`스킬 ${match.overlap}/${skills.length}개 일치하는 프로필 "${profile.id}" 사용`);
 
   // 목표치: 사용자가 비운 항목은 (자동 모드면) 프로필의 일반적인 수치로 채움
   const targets = {};
@@ -78,7 +100,9 @@ export async function planGear(input, { trade, profiles, rates, onProgress = () 
   const req = slotRequirements(profile);
   const league = input.league;
   const status = input.status || 'securable';
-  const budgetEx = Number(input.budgetEx) > 0 ? Number(input.budgetEx) : null;
+  // 예산: 엑잘 + 디바인(현재 환율로 엑잘 환산)
+  const budgetRaw = (Number(input.budget?.ex) || 0) + (Number(input.budget?.div) || 0) * (rates.divine || 0) + (Number(input.budgetEx) || 0);
+  const budgetEx = budgetRaw > 0 ? budgetRaw : null;
   const compromise = { enabled: input.compromise?.enabled !== false, ratio: Number(input.compromise?.ratio) || 3, minDiffEx: 10 };
   const depth = input.depth === 'quick' ? 1 : 2;
 
@@ -164,18 +188,19 @@ export async function planGear(input, { trade, profiles, rates, onProgress = () 
       if (keyMods.length) meta.notes.push(`요구 옵션: ${keyMods.map((m) => m.text.replace('#', `${m.min}+`)).join(' / ')}`);
 
       const slotWithOffhand = { ...slot, offhand: r.offhand };
-      const weights = {};
-      for (const k of slotStats(slotWithOffhand)) if (needs[k]) weights[k] = rollers[k] / needs[k];
+      const weights = slotWeights(slotStats(slotWithOffhand), needs, rollers);
+      meta.weights = weights;
       const baseQ = { category: r.category, keyMods, rarity: 'nonunique' };
       if (Object.keys(weights).length) {
-        queries.push({ q: { ...baseQ, weights, weightMin: 1.0, sort: 'price' }, limit: 10 });
+        // 가중치 합 = 대략 "쓸모 있는 옵션 줄 수". 등급별로 가장 싼 매물을 가져온다.
+        for (const tier of depth > 1 ? [1.5, 2.5, 3.5] : [2]) queries.push({ q: { ...baseQ, weights, weightMin: tier, sort: 'price' }, limit: 10 });
         if (depth > 1) queries.push({ q: { ...baseQ, weights, sort: 'weight', maxPriceEx: budgetEx || undefined }, limit: 10 });
         if (depth > 1 && needs.es && slot.kind === 'armour') queries.push({ q: { ...baseQ, esMin: Math.round((needs.es / rollers.es) * 1.2), sort: 'price' }, limit: 10 });
         queries.push({ q: { ...baseQ, sort: 'price' }, limit: 5 }); // 아무 능력치 없는 최저가 (다른 슬롯이 채울 때)
       } else queries.push({ q: { ...baseQ, sort: 'price' }, limit: 5 });
     }
 
-    slotInputs.push({ id: slot.id, pool: slot.pool === 'ring' ? 'ring' : undefined, candidates: [], baseQ: r.mustHave || slot.kind === 'flask' || slot.kind === 'charm' ? null : { category: r.category, keyMods: meta.keyMods, rarity: 'nonunique' }, slotDef: { ...slot, offhand: r.offhand } });
+    slotInputs.push({ id: slot.id, pool: slot.pool === 'ring' ? 'ring' : undefined, candidates: [], weights: meta.weights, baseQ: r.mustHave || slot.kind === 'flask' || slot.kind === 'charm' ? null : { category: r.category, keyMods: meta.keyMods, rarity: 'nonunique' }, slotDef: { ...slot, offhand: r.offhand } });
     await collect(slotInputs[slotInputs.length - 1], queries, meta);
     if (r.mustHave && !slotInputs[slotInputs.length - 1].candidates.length) meta.notes.push(`필수 장비 ${r.mustHave.name} 매물을 찾지 못함`);
   }
@@ -184,7 +209,7 @@ export async function planGear(input, { trade, profiles, rates, onProgress = () 
   onProgress({ step: 'optimize', done: total, total });
   let opt = optimize(slotInputs, needs, { budgetEx, maxSets: 3 });
   for (let round = 0; round < 2 && !opt.feasible && opt.reason !== 'no-candidates' && opt.reason !== 'over-budget'; round++) {
-    const focus = opt.shortfall ? Object.keys(opt.shortfall) : Object.keys(needs);
+    const focus = opt.shortfall ? Object.keys(opt.shortfall) : opt.conflict ? Object.keys(opt.conflict) : Object.keys(needs);
     onProgress({ step: 'refine', stats: focus, round: round + 1 });
     for (const si of slotInputs) {
       if (!si.baseQ) continue;
@@ -196,6 +221,31 @@ export async function planGear(input, { trade, profiles, rates, onProgress = () 
     }
     opt = optimize(slotInputs, needs, { budgetEx, maxSets: 3 });
   }
+
+  // 개선 라운드: 1차 결과에서 비싼 슬롯마다 "그 매물 이상 성능인데 더 싼" 매물을 추가로 찾아 재최적화.
+  // (처음 검색은 가중치 기준이라 한두 능력치에 몰린 싼 매물을 놓칠 수 있음)
+  const improveRounds = depth > 1 ? 2 : 1;
+  for (let round = 0; round < improveRounds && opt.feasible; round++) {
+    const before = opt.sets[0].totalEx;
+    const picks = opt.sets[0].picks;
+    const targetsToImprove = slotInputs
+      .filter((si) => si.baseQ && picks[si.id] && picks[si.id].priceEx > 3 && si.weights && Object.keys(si.weights).length)
+      .sort((a, b) => picks[b.id].priceEx - picks[a.id].priceEx)
+      .slice(0, depth > 1 ? 5 : 3);
+    if (!targetsToImprove.length) break;
+    onProgress({ step: 'improve', round: round + 1, slots: targetsToImprove.map((si) => slotMeta[si.id].label) });
+    for (const si of targetsToImprove) {
+      const pick = picks[si.id];
+      const contrib = Object.entries(si.weights).map(([k, w]) => [k, (pick.stats[k] || 0) * w]).sort((a, b) => b[1] - a[1]);
+      const value = contrib.reduce((a, [, v]) => a + v, 0);
+      const queries = [{ q: { ...si.baseQ, weights: si.weights, weightMin: Math.round(value * 0.85 * 100) / 100, sort: 'price' }, limit: 10 }];
+      const [topStat] = contrib[0] || [];
+      if (depth > 1 && topStat && pick.stats[topStat] > 0) queries.push({ q: { ...si.baseQ, weights: { [topStat]: 1 }, weightMin: Math.round(pick.stats[topStat] * 0.9), sort: 'price' }, limit: 10 });
+      await collect(si, queries, slotMeta[si.id]);
+    }
+    opt = optimize(slotInputs, needs, { budgetEx, maxSets: 3 });
+    if (!opt.feasible || opt.sets[0].totalEx >= before - 0.5) break;
+  }
   const response = {
     ok: true,
     mode: trade.mode,
@@ -205,15 +255,18 @@ export async function planGear(input, { trade, profiles, rates, onProgress = () 
     needs,
     resBase: base,
     resSettings,
+    budgetEx,
     notes,
     slotMeta,
     searches,
     feasible: opt.feasible,
     sets: [],
   };
+  if (input.debug) response.debugSlots = slotInputs.map(({ id, pool, candidates }) => ({ id, pool, candidates: candidates.map(({ uid, priceEx, stats }) => ({ uid, priceEx, stats })) }));
   if (!opt.feasible) {
     response.reason = opt.reason;
     response.shortfall = opt.shortfall;
+    response.conflict = opt.conflict;
     response.emptySlots = opt.emptySlots;
     return response;
   }

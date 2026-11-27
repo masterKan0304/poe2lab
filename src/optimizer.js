@@ -73,45 +73,70 @@ export function optimize(slots, needs, { beamWidth = 3000, maxSets = 3, budgetEx
   ratios.sort((a, b) => a - b);
   const K = ratios.length ? ratios[Math.floor(ratios.length / 2)] : 1;
 
-  const deficitScore = (acc) => keys.reduce((a, k) => a + Math.max(0, needs[k] - acc[k]) / needs[k], 0);
+  const deficitScore = (acc) => keys.reduce((a, k) => (needs[k] > 0 ? a + Math.max(0, needs[k] - acc[k]) / needs[k] : a), 0);
 
-  let beam = [{ cost: 0, acc: Object.fromEntries(keys.map((k) => [k, 0])), picks: [], used: new Set() }];
-  for (let i = 0; i < ordered.length; i++) {
-    const slot = ordered[i];
-    const next = [];
-    for (const st of beam) {
-      for (const c of slot.candidates) {
-        if (st.used.has(c.uid)) continue;
-        const cost = st.cost + c.priceEx;
-        if (budgetEx != null && cost + minRemCost[i + 1] > budgetEx) continue;
-        const acc = { ...st.acc };
-        let ok = true;
-        for (const k of keys) {
-          acc[k] += c.stats[k] || 0;
-          if (acc[k] + maxRem[i + 1][k] + 1e-9 < needs[k]) { ok = false; break; }
+  // 빔 서치 1회. penalty 가 클수록 '목표 달성' 을 '가격' 보다 우선시 (빡빡한 목표에서 해를 놓치지 않도록)
+  const runBeam = (penalty, width, maximize = null) => {
+    let beam = [{ cost: 0, acc: Object.fromEntries(keys.map((k) => [k, 0])), picks: [], used: new Set() }];
+    for (let i = 0; i < ordered.length; i++) {
+      const slot = ordered[i];
+      const next = [];
+      for (const st of beam) {
+        for (const c of slot.candidates) {
+          if (st.used.has(c.uid)) continue;
+          const cost = st.cost + c.priceEx;
+          if (budgetEx != null && cost + minRemCost[i + 1] > budgetEx) continue;
+          const acc = { ...st.acc };
+          let ok = true;
+          for (const k of keys) {
+            acc[k] += c.stats[k] || 0;
+            if (acc[k] + maxRem[i + 1][k] + 1e-9 < needs[k]) { ok = false; break; }
+          }
+          if (!ok) continue;
+          next.push({ cost, acc, picks: [...st.picks, c], used: c.uid ? new Set([...st.used, c.uid]) : st.used, rank: cost + penalty * K * deficitScore(acc) - (maximize ? penalty * K * (acc[maximize.key] / maximize.scale) : 0) });
         }
-        if (!ok) continue;
-        next.push({ cost, acc, picks: [...st.picks, c], used: c.uid ? new Set([...st.used, c.uid]) : st.used, rank: cost + K * deficitScore(acc) });
       }
+      if (!next.length) break;
+      next.sort((a, b) => a.rank - b.rank);
+      // 동일 조합 중복 제거 + 빔 폭 제한
+      const seen = new Set();
+      beam = [];
+      for (const st of next) {
+        const sig = st.picks.map((p) => p.uid).sort().join(',');
+        if (seen.has(sig)) continue;
+        seen.add(sig);
+        beam.push(st);
+        if (beam.length >= width) break;
+      }
+      if (i === ordered.length - 1) beam = beam.filter((st) => st.picks.length === ordered.length);
     }
-    if (!next.length) break;
-    next.sort((a, b) => a.rank - b.rank);
-    // 동일 조합 중복 제거 + 빔 폭 제한
-    const seen = new Set();
-    beam = [];
-    for (const st of next) {
-      const sig = st.picks.map((p) => p.uid).sort().join(',');
-      if (seen.has(sig)) continue;
-      seen.add(sig);
-      beam.push(st);
-      if (beam.length >= beamWidth) break;
-    }
-    if (i === ordered.length - 1) beam = beam.filter((st) => st.picks.length === ordered.length);
-  }
 
-  const done = beam.filter((st) => st.picks.length === ordered.length && keys.every((k) => st.acc[k] + 1e-9 >= needs[k])).sort((a, b) => a.cost - b.cost);
+    return beam.filter((st) => st.picks.length === ordered.length && keys.every((k) => st.acc[k] + 1e-9 >= needs[k]));
+  };
+
+  let done = [];
+  for (const [penalty, width] of [[1, beamWidth], [10, beamWidth], [100, beamWidth * 2], [1000, beamWidth * 4]]) {
+    done.push(...runBeam(penalty, width));
+    if (done.length >= maxSets) break;
+  }
+  const uniq = new Map();
+  for (const st of done) uniq.set(st.picks.map((p) => p.uid).join(','), st);
+  done = [...uniq.values()].sort((a, b) => a.cost - b.cost);
   if (!done.length) {
-    return { feasible: false, reason: budgetEx != null ? 'over-budget' : 'search-failed', budgetEx, sets: [] };
+    if (budgetEx != null) return { feasible: false, reason: 'over-budget', budgetEx, sets: [] };
+    // 능력치별로는 가능하지만 동시에 만족하는 조합이 없음 -> 각 목표를 하나씩 풀었을 때 그 능력치를 최대 얼마까지 얻을 수 있는지 알려줌
+    const conflict = {};
+    for (const k of keys) {
+      const relaxed = (() => {
+        const saved = needs[k];
+        needs[k] = 0;
+        const sts = runBeam(100, beamWidth, { key: k, scale: saved });
+        needs[k] = saved;
+        return sts.length ? Math.floor(Math.max(...sts.map((st) => st.acc[k]))) : null;
+      })();
+      if (relaxed != null) conflict[k] = { need: needs[k], maxWithOthers: relaxed };
+    }
+    return { feasible: false, reason: 'targets-conflict', conflict, sets: [] };
   }
 
   // 서로 2개 이상 슬롯이 다른 세트를 우선 골라 선택지를 다양하게

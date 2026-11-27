@@ -38,9 +38,12 @@ async function init() {
   updateBadge();
   $('#mode').addEventListener('change', updateBadge);
   refreshProfileLists();
+  setupCombos();
+  $('#league').addEventListener('change', loadRates);
+  loadRates();
   $('#targets').append(...STAT_UI.map((s) => h('label', {}, s.label, h('input', { type: 'number', min: 0, max: s.max, name: `t_${s.id}`, placeholder: '자동' }))));
-  $('#className').addEventListener('change', suggestSkills);
   $('#form').addEventListener('input', updateResHint);
+  $('#form').addEventListener('input', updateBudgetHint);
   $('#form').addEventListener('submit', run);
   $('#profileFile').addEventListener('change', uploadProfile);
   updateResHint();
@@ -53,18 +56,120 @@ function updateBadge() {
   b.className = `badge ${mode}`;
 }
 
+// ---------- 한글/영문 이름 ----------
+let KO = { cls: new Map(), skill: new Map() };
 function refreshProfileLists() {
-  const classes = [...new Set(META.profiles.map((p) => p.class))];
-  $('#classList').replaceChildren(...classes.map((c) => h('option', { value: c })));
-  const skills = [...new Set(META.profiles.flatMap((p) => p.skills))];
-  $('#skillList').replaceChildren(...skills.map((s) => h('option', { value: s })));
+  KO = { cls: new Map(META.i18n.classes.map((c) => [c.en, c])), skill: new Map(META.i18n.skills.map((s) => [s.en, s])) };
+  // 프로필에는 있는데 번역 목록에 없는 이름도 후보에 포함
+  for (const p of META.profiles) {
+    if (!KO.cls.has(p.class)) KO.cls.set(p.class, { en: p.class, ko: p.class, base: '', baseKo: '' });
+    for (const sk of p.skills) if (!KO.skill.has(sk)) KO.skill.set(sk, { en: sk, ko: sk });
+  }
+}
+const koClass = (en) => KO.cls.get(en)?.ko || en;
+const koSkill = (en) => KO.skill.get(en)?.ko || en;
+
+// ---------- 초성 검색 ----------
+const CHO = ['ㄱ', 'ㄲ', 'ㄴ', 'ㄷ', 'ㄸ', 'ㄹ', 'ㅁ', 'ㅂ', 'ㅃ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅉ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'];
+const chosung = (s) => [...s].map((ch) => { const c = ch.charCodeAt(0) - 0xac00; return c >= 0 && c < 11172 ? CHO[Math.floor(c / 588)] : ch; }).join('');
+const squash = (s) => String(s || '').replace(/\s+/g, '').toLowerCase();
+const isChoQuery = (q) => /^[ㄱ-ㅎ]+$/.test(q);
+
+/** 검색어와 항목의 일치 점수 (낮을수록 우선, -1 = 불일치) */
+function matchScore(item, q) {
+  if (!q) return 0;
+  const ko = squash(item.ko), en = squash(item.en);
+  if (isChoQuery(q)) { const i = chosung(ko).indexOf(q); return i < 0 ? -1 : i === 0 ? 1 : 3; }
+  for (const [txt, base] of [[ko, 0], [en, 0]]) { const i = txt.indexOf(q); if (i === 0) return base; if (i > 0) return base + 2; }
+  return -1;
 }
 
-function suggestSkills() {
-  const p = META.profiles.find((x) => x.class.toLowerCase() === $('#className').value.trim().toLowerCase());
-  if (!p) return;
+function highlight(text, q) {
+  if (!q || isChoQuery(q)) return [text];
+  const i = text.toLowerCase().indexOf(q);
+  if (i < 0) return [text];
+  return [text.slice(0, i), h('mark', {}, text.slice(i, i + q.length)), text.slice(i + q.length)];
+}
+
+function combobox(input, getItems, { onPick } = {}) {
+  const list = h('ul', { role: 'listbox', hidden: true });
+  input.after(list);
+  input.setAttribute('role', 'combobox');
+  let items = [];
+  let active = -1;
+  const close = () => { list.hidden = true; active = -1; };
+  const pick = (it) => { input.value = it.ko; input.dataset.en = it.en; close(); onPick?.(it); input.dispatchEvent(new Event('input', { bubbles: true })); };
+  const render = () => {
+    const q = squash(input.value);
+    items = getItems()
+      .map((it) => ({ it, s: matchScore(it, q) }))
+      .filter((x) => x.s >= 0)
+      .sort((a, b) => (b.it.featured ? 1 : 0) - (a.it.featured ? 1 : 0) || a.s - b.s || a.it.ko.localeCompare(b.it.ko, 'ko'))
+      .slice(0, 40).map((x) => x.it);
+    active = items.length ? 0 : -1;
+    list.replaceChildren(...(items.length ? items.map((it, i) => h('li', { role: 'option', class: i === active ? 'active' : '', onmousedown: (e) => { e.preventDefault(); pick(it); } },
+      h('span', {}, ...highlight(it.ko, input.value.trim().toLowerCase()), it.featured ? h('span', { class: 'tag' }, it.featured) : null),
+      h('small', {}, it.sub || it.en))) : [h('li', { class: 'empty' }, '일치하는 항목 없음 (그대로 검색 가능)')]));
+    list.hidden = false;
+  };
+  const move = (d) => {
+    if (!items.length) return;
+    active = (active + d + items.length) % items.length;
+    [...list.children].forEach((li, i) => li.classList.toggle('active', i === active));
+    list.children[active]?.scrollIntoView({ block: 'nearest' });
+  };
+  input.addEventListener('input', (e) => { if (e.isTrusted) delete input.dataset.en; render(); });
+  input.addEventListener('focus', render);
+  input.addEventListener('blur', () => setTimeout(close, 100));
+  input.addEventListener('keydown', (e) => {
+    if (e.isComposing) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); list.hidden ? render() : move(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); move(-1); }
+    else if (e.key === 'Enter' && !list.hidden && active >= 0) { e.preventDefault(); pick(items[active]); }
+    else if (e.key === 'Escape') close();
+  });
+}
+
+function selectedClassEn() {
+  const inp = $('#form').className;
+  return inp.dataset.en || [...KO.cls.values()].find((c) => squash(c.ko) === squash(inp.value) || squash(c.en) === squash(inp.value))?.en || inp.value.trim();
+}
+
+function setupCombos() {
   const f = $('#form');
-  p.skills.forEach((s, i) => { if (!f[`skill${i}`].value) f[`skill${i}`].value = s; });
+  const withProfile = new Set(META.profiles.map((p) => p.class));
+  combobox(f.className, () => [...KO.cls.values()].map((c) => ({ ...c, sub: `${c.en}${c.baseKo ? ` · ${c.baseKo}` : ''}`, featured: withProfile.has(c.en) ? '샘플 빌드' : null })), {
+    onPick: (c) => {
+      // 그 직업의 샘플 빌드 스킬로 빈 칸 채우기
+      const p = META.profiles.find((x) => x.class === c.en);
+      if (!p) return;
+      p.skills.forEach((en, i) => { const inp = f[`skill${i}`]; if (inp && !inp.value) { inp.value = koSkill(en); inp.dataset.en = en; } });
+    },
+  });
+  for (const i of [0, 1, 2]) {
+    combobox(f[`skill${i}`], () => {
+      const cls = selectedClassEn();
+      const used = new Set(META.profiles.filter((p) => p.class === cls).flatMap((p) => p.skills));
+      const taken = new Set([0, 1, 2].filter((j) => j !== i).map((j) => f[`skill${j}`].dataset.en).filter(Boolean));
+      return [...KO.skill.values()].filter((s) => !taken.has(s.en)).map((s) => ({ ...s, featured: used.has(s.en) ? '샘플 빌드' : null }));
+    });
+  }
+}
+
+// ---------- 환율 / 예산 ----------
+let DIVINE = null;
+async function loadRates() {
+  try {
+    const r = await fetch(`/api/rates?league=${encodeURIComponent($('#league').value)}`).then((x) => x.json());
+    DIVINE = r.divine;
+  } catch { DIVINE = null; }
+  updateBudgetHint();
+}
+function updateBudgetHint() {
+  const f = $('#form');
+  const ex = Number(f.budgetEx.value || 0), div = Number(f.budgetDiv.value || 0);
+  const rate = DIVINE ? `1 div ≈ ${fmt(DIVINE)} ex` : '환율 조회 중';
+  $('#budgetHint').textContent = ex || div ? `총 ≈ ${fmt(ex + div * (DIVINE || 0))} ex (${rate})` : `무제한 · ${rate}`;
 }
 
 function updateResHint() {
@@ -82,8 +187,8 @@ function readForm() {
     mode: f.mode.value,
     league: f.league.value,
     status: f.status.value,
-    className: f.className.value.trim(),
-    skills: [f.skill0.value, f.skill1.value, f.skill2.value].map((s) => s.trim()).filter(Boolean),
+    className: f.className.dataset.en || f.className.value.trim(),
+    skills: [f.skill0, f.skill1, f.skill2].map((el) => el.dataset.en || el.value.trim()).filter(Boolean),
     autoTargets: f.autoTargets.checked,
     targets: { life: num('t_life'), es: num('t_es'), ward: num('t_ward'), mana: num('t_mana'), fireRes: ele, coldRes: ele, lightRes: ele, chaosRes: num('t_chaosRes'), moveSpeed: num('t_moveSpeed') },
     resSettings: {
@@ -91,7 +196,7 @@ function readForm() {
       campaignBonus: Number(f.campaignBonus.value || 0),
       other: { fireRes: Number(f.otherFire.value || 0), coldRes: Number(f.otherCold.value || 0), lightRes: Number(f.otherLight.value || 0), chaosRes: Number(f.otherChaos.value || 0) },
     },
-    budgetEx: num('budgetEx'),
+    budget: { ex: num('budgetEx'), div: num('budgetDiv') },
     compromise: { enabled: f.compromise.checked, ratio: Number(f.ratio.value || 3) },
     depth: f.depth.value,
   };
@@ -123,6 +228,7 @@ async function run(ev) {
         if (msg.type === 'progress') {
           if (msg.step === 'search') label.textContent = `매물 검색 중: ${msg.label} (${msg.done + 1}/${msg.total})`;
           else if (msg.step === 'optimize') label.textContent = '세트 조합 최적화 중…';
+          else if (msg.step === 'improve') label.textContent = `더 싼 대안 탐색 (${msg.round}차): ${msg.slots.join(', ')}`;
           else if (msg.step === 'refine') label.textContent = `목표 미달 능력치 보강 검색 (${msg.round}차): ${msg.stats.join(', ')}`;
           else if (msg.step === 'rates') label.textContent = msg.fallback ? '환율 조회 실패 — 기본 환율 사용' : '환율 조회 완료';
           if (msg.total) bar.style.width = `${Math.round((msg.done / msg.total) * 100)}%`;
@@ -150,7 +256,7 @@ function render() {
   if (!r.ok) return out.replaceChildren(h('div', { class: 'fail' }, r.error));
   const p = r.profile;
   const head = h('div', { class: 'summary' },
-    h('div', { class: 'profile' }, `빌드 프로필: ${p.class} · ${p.skills.join(' / ')} (${p.source === 'sample' ? '샘플' : '업로드'} · 표본 ${p.sampleSize ?? '?'}명 · 스킬 ${p.overlap}개 일치) · ${r.mode === 'mock' ? '데모 매물' : '실시간 매물'} · 검색 ${r.searches}회`),
+    h('div', { class: 'profile' }, `빌드 프로필: ${koClass(p.class)} · ${p.skills.map(koSkill).join(' / ') || '-'} (${{ sample: '샘플', user: '업로드', generic: '일반 프로필' }[p.source] || p.source}${p.source === 'generic' ? '' : ` · 표본 ${p.sampleSize ?? '?'}명 · 스킬 ${p.overlap}개 일치`})${r.budgetEx ? ` · 예산 ${fmt(r.budgetEx)} ex` : ''} · ${r.mode === 'mock' ? '데모 매물' : '실시간 매물'} · 검색 ${r.searches}회`),
     r.notes.length ? h('div', { class: 'notes-global' }, r.notes.join(' · ')) : null,
     r.ratesFallback ? h('div', { class: 'notes-global' }, '※ poe.ninja 환율 조회 실패 — 기본 환율로 계산') : null);
 
@@ -159,6 +265,10 @@ function render() {
     if (r.reason === 'targets-unreachable') for (const [k, v] of Object.entries(r.shortfall)) items.push(h('li', {}, `${STAT_LABEL[k]}: 장비에서 ${fmt(v.need)} 필요 / 찾은 매물로 최대 ${fmt(v.maxPossible)}`));
     if (r.reason === 'no-candidates') items.push(h('li', {}, `매물을 하나도 못 찾은 슬롯: ${r.emptySlots.map((s) => r.slotMeta[s]?.label || s).join(', ')}`));
     if (r.reason === 'over-budget') items.push(h('li', {}, '예산 안에서 목표를 모두 만족하는 조합이 없습니다.'));
+    if (r.reason === 'targets-conflict') {
+      items.push(h('li', {}, '능력치 하나하나는 가능하지만, 모든 목표를 동시에 만족하는 조합이 없습니다. 아래 중 하나를 낮춰보세요:'));
+      for (const [k, v] of Object.entries(r.conflict || {})) items.push(h('li', {}, `${STAT_LABEL[k]}: 장비에서 ${fmt(v.need)} 필요 → 다른 목표를 지키면 약 ${fmt(v.maxWithOthers)} 까지 가능`));
+    }
     if (r.reason === 'search-failed') items.push(h('li', {}, '조합 탐색에 실패했습니다. 목표치를 조금 낮춰보세요.'));
     return out.replaceChildren(head, h('div', { class: 'fail' }, h('b', {}, '조건을 만족하는 장비 세트가 없습니다'), h('ul', {}, items)));
   }
