@@ -33,6 +33,7 @@ const STAT_UI = [
 
 async function init() {
   META = await fetch('/api/meta').then((r) => r.json());
+  mergeLocalProfiles();
   $('#league').append(...META.leagues.map((l) => h('option', { value: l }, l)));
   $('#mode').value = META.defaultMode;
   updateBadge();
@@ -52,7 +53,7 @@ async function init() {
 function updateBadge() {
   const mode = $('#mode').value;
   const b = $('#modeBadge');
-  b.textContent = mode === 'mock' ? '데모 데이터 — 실제 매물 아님' : `실시간 trade2 · 은신처 이동 ${META.canTeleport.live ? 'ON' : 'OFF (POESESSID 없음)'}`;
+  b.textContent = mode === 'mock' ? '데모 데이터 — 실제 매물 아님' : META.hosted ? '실시간 trade2 — 호스팅 서버에서는 차단될 수 있음' : `실시간 trade2 · 은신처 이동 ${META.canTeleport.live ? 'ON' : 'OFF (POESESSID 없음)'}`;
   b.className = `badge ${mode}`;
 }
 
@@ -190,6 +191,7 @@ function readForm() {
   const ele = num('t_eleRes');
   return {
     mode: f.mode.value,
+    profiles: localProfiles(),
     league: f.league.value,
     status: f.status.value,
     className: f.className.dataset.en || f.className.value.trim(),
@@ -330,15 +332,30 @@ async function teleport(item, mode) {
   toast(res.ok ? (res.result?.mock ? `(데모) ${item.seller} 은신처로 이동 요청됨` : `${item.seller} 은신처로 이동 요청됨 — 게임을 확인하세요`) : `실패: ${res.error}`);
 }
 
+// 업로드한 프로필은 이 브라우저(localStorage)에 보관하고 검색할 때 같이 보낸다 (호스팅 환경에서도 동작)
+const LS_KEY = 'poe2lab.profiles';
+function localProfiles() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY) || '[]'); } catch { return []; }
+}
+function mergeLocalProfiles() {
+  const local = localProfiles();
+  META.profiles = [...META.profiles.filter((p) => !local.some((l) => l.id === p.id)), ...local.map((p) => ({ ...p, source: 'user' }))];
+}
+
 async function uploadProfile(ev) {
   const file = ev.target.files[0];
   if (!file) return;
   try {
     const json = JSON.parse(await file.text());
-    const res = await fetch('/api/profiles', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(json) }).then((r) => r.json());
+    const list = Array.isArray(json) ? json : json.profiles || [json];
+    const res = await fetch('/api/profiles', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(list) }).then((r) => r.json());
+    const okIds = new Set(res.results.filter((x) => !x.errors.length).map((x) => x.id));
+    const keep = [...localProfiles().filter((p) => !okIds.has(p.id)), ...list.filter((p) => okIds.has(p.id))];
+    try { localStorage.setItem(LS_KEY, JSON.stringify(keep)); } catch { /* 저장 불가 */ }
     const bad = res.results.filter((x) => x.errors.length);
-    toast(bad.length ? `일부 실패: ${bad.map((b) => `${b.id}: ${b.errors.join(', ')}`).join(' / ')}` : `프로필 ${res.results.length}개 추가됨`);
+    toast(bad.length ? `일부 실패: ${bad.map((b) => `${b.id}: ${b.errors.join(', ')}`).join(' / ')}` : `프로필 ${okIds.size}개 추가됨`);
     META = await fetch('/api/meta').then((r) => r.json());
+    mergeLocalProfiles();
     refreshProfileLists();
   } catch (err) {
     toast(`JSON 읽기 실패: ${err.message}`);

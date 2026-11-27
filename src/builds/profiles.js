@@ -40,15 +40,21 @@ export function loadProfiles() {
   return out;
 }
 
-export function saveUserProfiles(json) {
+export function saveUserProfiles(json, { persist = true } = {}) {
   const list = Array.isArray(json) ? json : json.profiles || [json];
   const results = list.map((p) => ({ id: p?.id, errors: validateProfile(p) }));
   const ok = list.filter((_, i) => results[i].errors.length === 0);
-  if (ok.length) {
-    mkdirSync(USER_DIR, { recursive: true });
-    for (const p of ok) writeFileSync(path.join(USER_DIR, `${String(p.id).replace(/[^\w-]/g, '_')}.json`), JSON.stringify({ ...p, source: 'user' }, null, 2));
+  let saved = false;
+  if (persist && ok.length) {
+    try {
+      mkdirSync(USER_DIR, { recursive: true });
+      for (const p of ok) writeFileSync(path.join(USER_DIR, `${String(p.id).replace(/[^\w-]/g, '_')}.json`), JSON.stringify({ ...p, source: 'user' }, null, 2));
+      saved = true;
+    } catch {
+      saved = false; // 읽기 전용 파일시스템 등
+    }
   }
-  return results;
+  return { results, saved };
 }
 
 /** 직업 + 스킬 3종과 가장 많이 겹치는 프로필 */

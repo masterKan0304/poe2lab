@@ -32,6 +32,15 @@ npm run i18n             # poe2db.tw 에서 전직/스킬 한글명 + 아이콘 
 > GGG trade API 는 클라우드/데이터센터 IP 를 403 으로 막습니다. **반드시 본인 PC 에서 실행하세요.**
 > 서버는 `127.0.0.1` 에만 열립니다 (POESESSID 를 쓰기 때문).
 
+### Vercel 배포 (데모)
+
+`main` 브랜치는 Vercel에 그대로 배포됩니다(예: poe2lab-eight.vercel.app). 화면은 `public/`에서, API는 `api/*.js` 서버리스 함수가 맡습니다. 실제 처리 코드는 로컬 서버와 같은 `src/handler.js`입니다.
+
+- 호스팅에서는 **데모 매물이 기본**입니다. 데이터센터 IP는 GGG trade API가 403으로 막기 때문입니다. 실시간을 고를 수는 있지만 차단되면 안내 문구가 나옵니다.
+- `POESESSID`는 Vercel에서 **무시**합니다. 공개 사이트에 넣으면 방문자 누구나 그 계정으로 요청할 수 있기 때문입니다. 은신처 이동은 로컬 실행에서만 됩니다.
+- 업로드한 빌드 프로필은 서버가 아니라 그 브라우저(localStorage)에 저장되고, 검색할 때 같이 전송됩니다.
+- 별도 빌드 단계는 없습니다(`vercel.json`).
+
 ### 동작 방식
 
 1. **빌드 매칭** — 직업 + 스킬 3종과 가장 많이 겹치는 빌드 프로필을 고릅니다.
@@ -93,7 +102,9 @@ npm run i18n             # poe2db.tw 에서 전직/스킬 한글명 + 아이콘 
 ### 구조
 
 ```
-server.js                 로컬 HTTP 서버 (UI + /api/plan NDJSON 스트리밍, /api/hideout, /api/profiles)
+server.js                 로컬 HTTP 서버 (정적 파일 + src/handler.js)
+src/handler.js            API 라우트 (/api/meta, /api/rates, /api/plan NDJSON 스트리밍, /api/hideout, /api/profiles)
+api/*.js                  Vercel 서버리스 함수 (src/handler.js 재사용)
 src/planner.js            파이프라인 (빌드 매칭 → 목표치 → 검색/타협 → 최적화 → 보강)
 src/optimizer.js          세트 최적화 (빔 서치)
 src/trade/live.js         trade2 클라이언트 · ratelimit.js 레이트 리밋 · query.js 쿼리 변환 · parse.js 아이템 파싱
