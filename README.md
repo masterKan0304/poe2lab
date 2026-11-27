@@ -24,7 +24,7 @@ npm run simulate         # 연결 진단 + 데모 매물로 전 직업 x 목표�
 npm run simulate -- --live   # + 실제 trade2 로 1회 전체 검색
 npm test
 npm run verify           # 실서버 스탯 id / 카테고리가 코드의 가정과 맞는지 점검
-npm run i18n             # poe2db.tw 에서 전직/스킬 한글명 다시 받기 (data/i18n/ko.json)
+npm run i18n             # poe2db.tw 에서 전직/스킬 한글명 + 아이콘 다시 받기 (data/i18n/ko.json, public/icons)
 ```
 
 **"찾기가 안 돼요" 일 때** — `npm run simulate` 를 먼저 돌리세요. trade2 연결(403 = IP/VPN 차단, 429 = 레이트 리밋), 환율, 스탯 매칭을 단계별로 점검하고 원인을 알려줍니다.
@@ -61,7 +61,7 @@ npm run i18n             # poe2db.tw 에서 전직/스킬 한글명 다시 받�
 |---|---|---|
 | pathofexile.com trade2 | 매물 검색/조회, 은신처 이동 | 응답 헤더의 레이트 리밋을 그대로 따르고, 버킷의 1/6은 사용자 몫으로 남깁니다. 실시간 검색은 1~5분 걸립니다. |
 | poe.ninja 경제 API | 화폐 환율 | 공개 API |
-| poe2db.tw | 전직/스킬 한글명 | `npm run i18n`으로 받아 `data/i18n/ko.json`에 저장합니다(앱 실행 중에는 접속하지 않음). |
+| poe2db.tw | 전직/스킬 한글명, 아이콘 | `npm run i18n`으로 받아 `data/i18n/ko.json`과 `public/icons/`에 저장합니다(앱 실행 중에는 접속하지 않음). 아이콘 저작권은 Grinding Gear Games에 있습니다. |
 | poe.ninja 빌드 | **사용 안 함** | 빌드/캐릭터 API는 poe.ninja가 "내부용, 서드파티 사용 불가"로 명시했습니다. 지금은 `data/builds/sample-profiles.json`(**예시 수치**)를 씁니다. 같은 스키마의 JSON을 UI에서 업로드하면 교체됩니다. |
 
 **은신처 순간이동**: trade2 사이트의 "Travel to Hideout" 버튼과 같은 요청(`POST /api/trade2/whisper`, 매물의 `hideout_token`)을 본인 `POESESSID`로 보냅니다. 즉시 구매(securable) 매물에만 있고, 게임에 접속해 있어야 합니다. 이 엔드포인트 형식은 아직 실서버로 확인하지 못했습니다.

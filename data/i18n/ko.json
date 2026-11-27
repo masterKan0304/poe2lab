@@ -6,1745 +6,2169 @@
    "en": "Deadeye",
    "ko": "데드아이",
    "base": "Ranger",
-   "baseKo": "레인저"
+   "baseKo": "레인저",
+   "icon": "icons/classes/Deadeye.webp"
   },
   {
    "en": "Pathfinder",
    "ko": "패스파인더",
    "base": "Ranger",
-   "baseKo": "레인저"
+   "baseKo": "레인저",
+   "icon": "icons/classes/Pathfinder.webp"
   },
   {
    "en": "Amazon",
    "ko": "아마존",
    "base": "Huntress",
-   "baseKo": "헌트리스"
+   "baseKo": "헌트리스",
+   "icon": "icons/classes/Amazon.webp"
   },
   {
    "en": "Spirit Walker",
    "ko": "스피릿 워커",
    "base": "Huntress",
-   "baseKo": "헌트리스"
+   "baseKo": "헌트리스",
+   "icon": "icons/classes/Spirit_Walker.webp"
   },
   {
    "en": "Ritualist",
    "ko": "리추얼리스트",
    "base": "Huntress",
-   "baseKo": "헌트리스"
+   "baseKo": "헌트리스",
+   "icon": "icons/classes/Ritualist.webp"
   },
   {
    "en": "Martial Artist",
    "ko": "마셜 아티스트",
    "base": "Monk",
-   "baseKo": "몽크"
+   "baseKo": "몽크",
+   "icon": "icons/classes/Martial_Artist.webp"
   },
   {
    "en": "Invoker",
    "ko": "인보커",
    "base": "Monk",
-   "baseKo": "몽크"
+   "baseKo": "몽크",
+   "icon": "icons/classes/Invoker.webp"
   },
   {
    "en": "Acolyte of Chayula",
    "ko": "애컬라이트 오브 차율라",
    "base": "Monk",
-   "baseKo": "몽크"
+   "baseKo": "몽크",
+   "icon": "icons/classes/Acolyte_of_Chayula.webp"
   },
   {
    "en": "Infernalist",
    "ko": "인퍼널리스트",
    "base": "Witch",
-   "baseKo": "위치"
+   "baseKo": "위치",
+   "icon": "icons/classes/Infernalist.webp"
   },
   {
    "en": "Blood Mage",
    "ko": "블러드 메이지",
    "base": "Witch",
-   "baseKo": "위치"
+   "baseKo": "위치",
+   "icon": "icons/classes/Blood_Mage.webp"
   },
   {
    "en": "Lich",
    "ko": "리치",
    "base": "Witch",
-   "baseKo": "위치"
+   "baseKo": "위치",
+   "icon": "icons/classes/Lich.webp"
   },
   {
    "en": "Abyssal Lich",
    "ko": "심연의 리치",
    "base": "Witch",
-   "baseKo": "위치"
+   "baseKo": "위치",
+   "icon": "icons/classes/Abyssal_Lich.webp"
   },
   {
    "en": "Stormweaver",
    "ko": "스톰위버",
    "base": "Sorceress",
-   "baseKo": "소서리스"
+   "baseKo": "소서리스",
+   "icon": "icons/classes/Stormweaver.webp"
   },
   {
    "en": "Chronomancer",
    "ko": "크로노맨서",
    "base": "Sorceress",
-   "baseKo": "소서리스"
+   "baseKo": "소서리스",
+   "icon": "icons/classes/Chronomancer.webp"
   },
   {
    "en": "Disciple of Varashta",
    "ko": "디사이플 오브 바라시타",
    "base": "Sorceress",
-   "baseKo": "소서리스"
+   "baseKo": "소서리스",
+   "icon": "icons/classes/Disciple_of_Varashta.webp"
   },
   {
    "en": "Titan",
    "ko": "타이탄",
    "base": "Warrior",
-   "baseKo": "워리어"
+   "baseKo": "워리어",
+   "icon": "icons/classes/Titan.webp"
   },
   {
    "en": "Warbringer",
    "ko": "워브링어",
    "base": "Warrior",
-   "baseKo": "워리어"
+   "baseKo": "워리어",
+   "icon": "icons/classes/Warbringer.webp"
   },
   {
    "en": "Smith of Kitava",
    "ko": "스미스 오브 키타바",
    "base": "Warrior",
-   "baseKo": "워리어"
+   "baseKo": "워리어",
+   "icon": "icons/classes/Smith_of_Kitava.webp"
   },
   {
    "en": "Tactician",
    "ko": "택티션",
    "base": "Mercenary",
-   "baseKo": "머서너리"
+   "baseKo": "머서너리",
+   "icon": "icons/classes/Tactician.webp"
   },
   {
    "en": "Witchhunter",
    "ko": "위치헌터",
    "base": "Mercenary",
-   "baseKo": "머서너리"
+   "baseKo": "머서너리",
+   "icon": "icons/classes/Witchhunter.webp"
   },
   {
    "en": "Gemling Legionnaire",
    "ko": "젬링 리저네어",
    "base": "Mercenary",
-   "baseKo": "머서너리"
+   "baseKo": "머서너리",
+   "icon": "icons/classes/Gemling_Legionnaire.webp"
   },
   {
    "en": "Oracle",
    "ko": "오라클",
    "base": "Druid",
-   "baseKo": "드루이드"
+   "baseKo": "드루이드",
+   "icon": "icons/classes/Oracle.webp"
   },
   {
    "en": "Shaman",
    "ko": "샤먼",
    "base": "Druid",
-   "baseKo": "드루이드"
+   "baseKo": "드루이드",
+   "icon": "icons/classes/Shaman.webp"
   }
  ],
  "skills": [
   {
    "en": "Abyssal Pact",
-   "ko": "심연의 맹약"
+   "ko": "심연의 맹약",
+   "icon": "icons/skills/Abyssal_Pact.webp"
   },
   {
    "en": "Acidic Concoction",
-   "ko": "산성 혼합물"
+   "ko": "산성 혼합물",
+   "icon": "icons/skills/Acidic_Concoction.webp"
   },
   {
    "en": "Alchemist's Boon",
-   "ko": "연금술사의 은혜"
+   "ko": "연금술사의 은혜",
+   "icon": "icons/skills/Alchemists_Boon.webp"
   },
   {
    "en": "Align Fate",
-   "ko": "운명 정렬"
+   "ko": "운명 정렬",
+   "icon": "icons/skills/Align_Fate.webp"
   },
   {
    "en": "Ancestral Cry",
-   "ko": "선대의 함성"
+   "ko": "선대의 함성",
+   "icon": "icons/skills/Ancestral_Cry.webp"
   },
   {
    "en": "Ancestral Spirits",
-   "ko": "선대의 혼백"
+   "ko": "선대의 혼백",
+   "icon": "icons/skills/Ancestral_Spirits.webp"
   },
   {
    "en": "Ancestral Warrior Totem",
-   "ko": "선대의 전사 토템"
+   "ko": "선대의 전사 토템",
+   "icon": "icons/skills/Ancestral_Warrior_Totem.webp"
   },
   {
    "en": "Animus Exchange",
-   "ko": "아니무스 교환"
+   "ko": "아니무스 교환",
+   "icon": "icons/skills/Animus_Exchange.webp"
   },
   {
    "en": "Animus Splinters",
-   "ko": "아니무스 파편"
+   "ko": "아니무스 파편",
+   "icon": "icons/skills/Animus_Splinters.webp"
   },
   {
    "en": "Apocalypse",
-   "ko": "종말"
+   "ko": "종말",
+   "icon": "icons/skills/Apocalypse.webp"
   },
   {
    "en": "Arc",
-   "ko": "연쇄 번개"
+   "ko": "연쇄 번개",
+   "icon": "icons/skills/Arc.webp"
   },
   {
    "en": "Archmage",
-   "ko": "대마법사"
+   "ko": "대마법사",
+   "icon": "icons/skills/Archmage.webp"
   },
   {
    "en": "Archon of Chayula",
-   "ko": "아콘 오브 차율라"
+   "ko": "아콘 오브 차율라",
+   "icon": "icons/skills/Archon_of_Chayula.webp"
   },
   {
    "en": "Arctic Armour",
-   "ko": "한기의 방어구"
+   "ko": "한기의 방어구",
+   "icon": "icons/skills/Arctic_Armour.webp"
   },
   {
    "en": "Arctic Howl",
-   "ko": "한기의 울부짖음"
+   "ko": "한기의 울부짖음",
+   "icon": "icons/skills/Arctic_Howl.webp"
   },
   {
    "en": "Armour Breaker",
-   "ko": "방어구 파괴자"
+   "ko": "방어구 파괴자",
+   "icon": "icons/skills/Armour_Breaker.webp"
   },
   {
    "en": "Armour Piercing Rounds",
-   "ko": "방어구 관통 탄환"
+   "ko": "방어구 관통 탄환",
+   "icon": "icons/skills/Armour_Piercing_Rounds.webp"
   },
   {
    "en": "Artillery Ballista",
-   "ko": "포대 쇠뇌"
+   "ko": "포대 쇠뇌",
+   "icon": "icons/skills/Artillery_Ballista.webp"
   },
   {
    "en": "Attrition",
-   "ko": "소모"
+   "ko": "소모",
+   "icon": "icons/skills/Attrition.webp"
   },
   {
    "en": "Axe Slash",
-   "ko": "도끼 베기"
+   "ko": "도끼 베기",
+   "icon": "icons/skills/Axe_Slash.webp"
   },
   {
    "en": "Azmerian Swarms",
-   "ko": "아즈메리 무리"
+   "ko": "아즈메리 무리",
+   "icon": "icons/skills/Azmerian_Swarms.webp"
   },
   {
    "en": "Azmerian Wolf",
-   "ko": "아즈메리 늑대"
+   "ko": "아즈메리 늑대",
+   "icon": "icons/skills/Azmerian_Wolf.webp"
   },
   {
    "en": "Ball Lightning",
-   "ko": "구형 번개"
+   "ko": "구형 번개",
+   "icon": "icons/skills/Ball_Lightning.webp"
   },
   {
    "en": "Barkskin",
-   "ko": "껍질피부"
+   "ko": "껍질피부",
+   "icon": "icons/skills/Barkskin.webp"
   },
   {
    "en": "Barrage",
-   "ko": "연발 사격"
+   "ko": "연발 사격",
+   "icon": "icons/skills/Barrage.webp"
   },
   {
    "en": "Barrier Invocation",
-   "ko": "방어 기원"
+   "ko": "방어 기원",
+   "icon": "icons/skills/Barrier_Invocation.webp"
   },
   {
    "en": "Berserk",
-   "ko": "광폭"
+   "ko": "광폭",
+   "icon": "icons/skills/Berserk.webp"
   },
   {
    "en": "Bind Spectre",
-   "ko": "망령 속박"
+   "ko": "망령 속박",
+   "icon": "icons/skills/Bind_Spectre.webp"
   },
   {
    "en": "Bitter Dead",
-   "ko": "원통한 망자"
+   "ko": "원통한 망자",
+   "icon": "icons/skills/Bitter_Dead.webp"
   },
   {
    "en": "Black Powder Blitz",
-   "ko": "검은 화약 공세"
+   "ko": "검은 화약 공세",
+   "icon": "icons/skills/Black_Powder_Blitz.webp"
   },
   {
    "en": "Blasphemy",
-   "ko": "신성 모독"
+   "ko": "신성 모독",
+   "icon": "icons/skills/Blasphemy.webp"
   },
   {
    "en": "Bleeding Concoction",
-   "ko": "출혈의 혼합물"
+   "ko": "출혈의 혼합물",
+   "icon": "icons/skills/Bleeding_Concoction.webp"
   },
   {
    "en": "Blink",
-   "ko": "점멸"
+   "ko": "점멸",
+   "icon": "icons/skills/Blink.webp"
   },
   {
    "en": "Blood Boil",
-   "ko": "피 종기"
+   "ko": "피 종기",
+   "icon": "icons/skills/Blood_Boil.webp"
   },
   {
    "en": "Blood Hunt",
-   "ko": "피의 사냥"
+   "ko": "피의 사냥",
+   "icon": "icons/skills/Blood_Hunt.webp"
   },
   {
    "en": "Bloodhound's Mark",
-   "ko": "피사냥개의 징표"
+   "ko": "피사냥개의 징표",
+   "icon": "icons/skills/Bloodhounds_Mark.webp"
   },
   {
    "en": "Bone Blast",
-   "ko": "뼈 폭발"
+   "ko": "뼈 폭발",
+   "icon": "icons/skills/Bone_Blast.webp"
   },
   {
    "en": "Bone Cage",
-   "ko": "뼈 창살"
+   "ko": "뼈 창살",
+   "icon": "icons/skills/Bone_Cage.webp"
   },
   {
    "en": "Bone Offering",
-   "ko": "뼈 공물"
+   "ko": "뼈 공물",
+   "icon": "icons/skills/Bone_Offering.webp"
   },
   {
    "en": "Boneshatter",
-   "ko": "뼈 박살"
+   "ko": "뼈 박살",
+   "icon": "icons/skills/Boneshatter.webp"
   },
   {
    "en": "Bonestorm",
-   "ko": "뼈 폭풍"
+   "ko": "뼈 폭풍",
+   "icon": "icons/skills/Bonestorm.webp"
   },
   {
    "en": "Bow Shot",
-   "ko": "활 사격"
+   "ko": "활 사격",
+   "icon": "icons/skills/Bow_Shot.webp"
   },
   {
    "en": "Briarpatch",
-   "ko": "가시밭"
+   "ko": "가시밭",
+   "icon": "icons/skills/Briarpatch.webp"
   },
   {
    "en": "Bursting Fen Toad",
-   "ko": "터지는 늪 두꺼비"
+   "ko": "터지는 늪 두꺼비",
+   "icon": "icons/skills/Bursting_Fen_Toad.webp"
   },
   {
    "en": "Cackling Companions",
-   "ko": "하이에나 반려수"
+   "ko": "하이에나 반려수",
+   "icon": "icons/skills/Cackling_Companions.webp"
   },
   {
    "en": "Called Shots",
-   "ko": "지정 사격"
+   "ko": "지정 사격",
+   "icon": "icons/skills/Called_Shots.webp"
   },
   {
    "en": "Cast on Block",
-   "ko": "막기 시 시전"
+   "ko": "막기 시 시전",
+   "icon": "icons/skills/Cast_on_Block.webp"
   },
   {
    "en": "Cast on Charm Use",
-   "ko": "호신부 사용 시 시전"
+   "ko": "호신부 사용 시 시전",
+   "icon": "icons/skills/Cast_on_Charm_Use.webp"
   },
   {
    "en": "Cast on Critical",
-   "ko": "치명타 시 시전"
+   "ko": "치명타 시 시전",
+   "icon": "icons/skills/Cast_on_Critical.webp"
   },
   {
    "en": "Cast on Dodge",
-   "ko": "회피 구르기 시 시전"
+   "ko": "회피 구르기 시 시전",
+   "icon": "icons/skills/Cast_on_Dodge.webp"
   },
   {
    "en": "Cast on Elemental Ailment",
-   "ko": "원소 상태 이상 시 시전"
+   "ko": "원소 상태 이상 시 시전",
+   "icon": "icons/skills/Cast_on_Elemental_Ailment.webp"
   },
   {
    "en": "Cast on Minion Death",
-   "ko": "소환수 사망 시 시전"
+   "ko": "소환수 사망 시 시전",
+   "icon": "icons/skills/Cast_on_Minion_Death.webp"
   },
   {
    "en": "Chaos Bolt",
-   "ko": "카오스 화살"
+   "ko": "카오스 화살",
+   "icon": "icons/skills/Chaos_Bolt.webp"
   },
   {
    "en": "Chaotic Surge",
-   "ko": "혼돈의 쇄도"
+   "ko": "혼돈의 쇄도",
+   "icon": "icons/skills/Chaotic_Surge.webp"
   },
   {
    "en": "Charge Regulation",
-   "ko": "충전 제어"
+   "ko": "충전 제어",
+   "icon": "icons/skills/Charge_Regulation.webp"
   },
   {
    "en": "Charged Staff",
-   "ko": "충전 지팡이"
+   "ko": "충전 지팡이",
+   "icon": "icons/skills/Charged_Staff.webp"
   },
   {
    "en": "Claw Stab",
-   "ko": "클로 찌르기"
+   "ko": "클로 찌르기",
+   "icon": "icons/skills/Claw_Stab.webp"
   },
   {
    "en": "Cluster Grenade",
-   "ko": "집속 유탄"
+   "ko": "집속 유탄",
+   "icon": "icons/skills/Cluster_Grenade.webp"
   },
   {
    "en": "Coiling Bolts",
-   "ko": "똬리를 트는 볼트"
+   "ko": "똬리를 트는 볼트",
+   "icon": "icons/skills/Coiling_Bolts.webp"
   },
   {
    "en": "Combat Frenzy",
-   "ko": "전투 격분"
+   "ko": "전투 격분",
+   "icon": "icons/skills/Combat_Frenzy.webp"
   },
   {
    "en": "Comet",
-   "ko": "혜성"
+   "ko": "혜성",
+   "icon": "icons/skills/Comet.webp"
   },
   {
    "en": "Conductive Runes",
-   "ko": "전도성 룬"
+   "ko": "전도성 룬",
+   "icon": "icons/skills/Conductive_Runes.webp"
   },
   {
    "en": "Consecrate",
-   "ko": "신성화"
+   "ko": "신성화",
+   "icon": "icons/skills/Consecrate.webp"
   },
   {
    "en": "Contagion",
-   "ko": "전염"
+   "ko": "전염",
+   "icon": "icons/skills/Contagion.webp"
   },
   {
    "en": "Convalescence",
-   "ko": "요양"
+   "ko": "요양",
+   "icon": "icons/skills/Convalescence.webp"
   },
   {
    "en": "Crackling Palm",
-   "ko": "치직대는 손바닥"
+   "ko": "치직대는 손바닥",
+   "icon": "icons/skills/Crackling_Palm.webp"
   },
   {
    "en": "Cross Slash",
-   "ko": "십자 베기"
+   "ko": "십자 베기",
+   "icon": "icons/skills/Cross_Slash.webp"
   },
   {
    "en": "Crossbow Shot",
-   "ko": "석궁 사격"
+   "ko": "석궁 사격",
+   "icon": "icons/skills/Crossbow_Shot.webp"
   },
   {
    "en": "Crushing Fear",
-   "ko": "타쇄하는 공포"
+   "ko": "타쇄하는 공포",
+   "icon": "icons/skills/Crushing_Fear.webp"
   },
   {
    "en": "Cull The Weak",
-   "ko": "약자 솎아내기"
+   "ko": "약자 솎아내기",
+   "icon": "icons/skills/Cull_The_Weak.webp"
   },
   {
    "en": "Dagger Stab",
-   "ko": "단검 찌르기"
+   "ko": "단검 찌르기",
+   "icon": "icons/skills/Dagger_Stab.webp"
   },
   {
    "en": "Dark Effigy",
-   "ko": "어둠의 제웅"
+   "ko": "어둠의 제웅",
+   "icon": "icons/skills/Dark_Effigy.webp"
   },
   {
    "en": "Dark Pact",
-   "ko": "어둠의 서약"
+   "ko": "어둠의 서약",
+   "icon": "icons/skills/Dark_Pact.webp"
   },
   {
    "en": "Decompose",
-   "ko": "부패"
+   "ko": "부패",
+   "icon": "icons/skills/Decompose.webp"
   },
   {
    "en": "Defiance Banner",
-   "ko": "저항의 깃발"
+   "ko": "저항의 깃발",
+   "icon": "icons/skills/Defiance_Banner.webp"
   },
   {
    "en": "Demon Form",
-   "ko": "악마 형상"
+   "ko": "악마 형상",
+   "icon": "icons/skills/Demon_Form.webp"
   },
   {
    "en": "Demon Magus",
-   "ko": "Demon Magus"
+   "ko": "Demon Magus",
+   "icon": "icons/skills/Demon_Magus.webp"
   },
   {
    "en": "Despair",
-   "ko": "절망"
+   "ko": "절망",
+   "icon": "icons/skills/Despair.webp"
   },
   {
    "en": "Detonate Dead",
-   "ko": "시체 폭발"
+   "ko": "시체 폭발",
+   "icon": "icons/skills/Detonate_Dead.webp"
   },
   {
    "en": "Detonate Living",
-   "ko": "생체 폭발"
+   "ko": "생체 폭발",
+   "icon": "icons/skills/Detonate_Living.webp"
   },
   {
    "en": "Detonating Arrow",
-   "ko": "폭발 화살"
+   "ko": "폭발 화살",
+   "icon": "icons/skills/Detonating_Arrow.webp"
   },
   {
    "en": "Devour",
-   "ko": "포식"
+   "ko": "포식",
+   "icon": "icons/skills/Devour.webp"
   },
   {
    "en": "Discipline",
-   "ko": "단련"
+   "ko": "단련",
+   "icon": "icons/skills/Discipline.webp"
   },
   {
    "en": "Disengage",
-   "ko": "철수"
+   "ko": "철수",
+   "icon": "icons/skills/Disengage.webp"
   },
   {
    "en": "Dread Banner",
-   "ko": "공포의 깃발"
+   "ko": "공포의 깃발",
+   "icon": "icons/skills/Dread_Banner.webp"
   },
   {
    "en": "Earthquake",
-   "ko": "지진"
+   "ko": "지진",
+   "icon": "icons/skills/Earthquake.webp"
   },
   {
    "en": "Earthshatter",
-   "ko": "지면 분쇄"
+   "ko": "지면 분쇄",
+   "icon": "icons/skills/Earthshatter.webp"
   },
   {
    "en": "Electrocuting Arrow",
-   "ko": "전기 처형의 화살"
+   "ko": "전기 처형의 화살",
+   "icon": "icons/skills/Electrocuting_Arrow.webp"
   },
   {
    "en": "Elemental Conflux",
-   "ko": "원소 융합"
+   "ko": "원소 융합",
+   "icon": "icons/skills/Elemental_Conflux.webp"
   },
   {
    "en": "Elemental Expression",
-   "ko": "원소 표현"
+   "ko": "원소 표현",
+   "icon": "icons/skills/Elemental_Expression.webp"
   },
   {
    "en": "Elemental Invocation",
-   "ko": "원소 기원"
+   "ko": "원소 기원",
+   "icon": "icons/skills/Elemental_Invocation.webp"
   },
   {
    "en": "Elemental Storm",
-   "ko": "원소 폭풍"
+   "ko": "원소 폭풍",
+   "icon": "icons/skills/Elemental_Storm.webp"
   },
   {
    "en": "Elemental Sundering",
-   "ko": "원소 작렬"
+   "ko": "원소 작렬",
+   "icon": "icons/skills/Elemental_Sundering.webp"
   },
   {
    "en": "Elemental Surge",
-   "ko": "원소 쇄도"
+   "ko": "원소 쇄도",
+   "icon": "icons/skills/Elemental_Surge.webp"
   },
   {
    "en": "Elemental Weakness",
-   "ko": "원소 약화"
+   "ko": "원소 약화",
+   "icon": "icons/skills/Elemental_Weakness.webp"
   },
   {
    "en": "Ember Fusillade",
-   "ko": "불씨 일제 사격"
+   "ko": "불씨 일제 사격",
+   "icon": "icons/skills/Ember_Fusillade.webp"
   },
   {
    "en": "Emergency Reload",
-   "ko": "비상 재장전"
+   "ko": "비상 재장전",
+   "icon": "icons/skills/Emergency_Reload.webp"
   },
   {
    "en": "Encase in Jade",
-   "ko": "비취에 갇힘"
+   "ko": "비취에 갇힘",
+   "icon": "icons/skills/Encase_in_Jade.webp"
   },
   {
    "en": "Enervating Nova",
-   "ko": "피폐의 폭발"
+   "ko": "피폐의 폭발",
+   "icon": "icons/skills/Enervating_Nova.webp"
   },
   {
    "en": "Enfeeble",
-   "ko": "쇠약화"
+   "ko": "쇠약화",
+   "icon": "icons/skills/Enfeeble.webp"
   },
   {
    "en": "Entangle",
-   "ko": "얽어매기"
+   "ko": "얽어매기",
+   "icon": "icons/skills/Entangle.webp"
   },
   {
    "en": "Escape Shot",
-   "ko": "탈출 사격"
+   "ko": "탈출 사격",
+   "icon": "icons/skills/Escape_Shot.webp"
   },
   {
    "en": "Essence Drain",
-   "ko": "정수 흡수"
+   "ko": "정수 흡수",
+   "icon": "icons/skills/Essence_Drain.webp"
   },
   {
    "en": "Eternal March",
-   "ko": "영원한 행진"
+   "ko": "영원한 행진",
+   "icon": "icons/skills/Eternal_March.webp"
   },
   {
    "en": "Eternal Rage",
-   "ko": "영원한 격노"
+   "ko": "영원한 격노",
+   "icon": "icons/skills/Eternal_Rage.webp"
   },
   {
    "en": "Explosive Concoction",
-   "ko": "폭발성 혼합물"
+   "ko": "폭발성 혼합물",
+   "icon": "icons/skills/Explosive_Concoction.webp"
   },
   {
    "en": "Explosive Grenade",
-   "ko": "폭발 유탄"
+   "ko": "폭발 유탄",
+   "icon": "icons/skills/Explosive_Grenade.webp"
   },
   {
    "en": "Explosive Shot",
-   "ko": "폭발성 사격"
+   "ko": "폭발성 사격",
+   "icon": "icons/skills/Explosive_Shot.webp"
   },
   {
    "en": "Explosive Spear",
-   "ko": "폭발 창"
+   "ko": "폭발 창",
+   "icon": "icons/skills/Explosive_Spear.webp"
   },
   {
    "en": "Explosive Transmutation",
-   "ko": "폭발성 변형"
+   "ko": "폭발성 변형",
+   "icon": "icons/skills/Explosive_Transmutation.webp"
   },
   {
    "en": "Exsanguinate",
-   "ko": "방혈"
+   "ko": "방혈",
+   "icon": "icons/skills/Exsanguinate.webp"
   },
   {
    "en": "Eye of Winter",
-   "ko": "겨울의 눈"
+   "ko": "겨울의 눈",
+   "icon": "icons/skills/Eye_of_Winter.webp"
   },
   {
    "en": "Falling Thunder",
-   "ko": "떨어지는 천둥"
+   "ko": "떨어지는 천둥",
+   "icon": "icons/skills/Falling_Thunder.webp"
   },
   {
    "en": "Fangs of Frost",
-   "ko": "서리의 송곳니"
+   "ko": "서리의 송곳니",
+   "icon": "icons/skills/Fangs_of_Frost.webp"
   },
   {
    "en": "Feast of Flesh",
-   "ko": "육체의 연회"
+   "ko": "육체의 연회",
+   "icon": "icons/skills/Feast_of_Flesh.webp"
   },
   {
    "en": "Feral Invocation",
-   "ko": "야생의 기원"
+   "ko": "야생의 기원",
+   "icon": "icons/skills/Feral_Invocation.webp"
   },
   {
    "en": "Ferocious Roar",
-   "ko": "사나운 포효"
+   "ko": "사나운 포효",
+   "icon": "icons/skills/Ferocious_Roar.webp"
   },
   {
    "en": "Fire Spell on Hit",
-   "ko": "명중 시 화염 주문"
+   "ko": "명중 시 화염 주문",
+   "icon": "icons/skills/Fire_Spell_on_Hit.webp"
   },
   {
    "en": "Fireball",
-   "ko": "화염구"
+   "ko": "화염구",
+   "icon": "icons/skills/Fireball.webp"
   },
   {
    "en": "Firebolt",
-   "ko": "화염 화살"
+   "ko": "화염 화살",
+   "icon": "icons/skills/Firebolt.webp"
   },
   {
    "en": "Firestorm",
-   "ko": "화염 폭풍"
+   "ko": "화염 폭풍",
+   "icon": "icons/skills/Firestorm.webp"
   },
   {
    "en": "Flail Strike",
-   "ko": "도리깨 타격"
+   "ko": "도리깨 타격",
+   "icon": "icons/skills/Flail_Strike.webp"
   },
   {
    "en": "Flame Breath",
-   "ko": "화염 숨결"
+   "ko": "화염 숨결",
+   "icon": "icons/skills/Flame_Breath.webp"
   },
   {
    "en": "Flame Wall",
-   "ko": "화염 벽"
+   "ko": "화염 벽",
+   "icon": "icons/skills/Flame_Wall.webp"
   },
   {
    "en": "Flameblast",
-   "ko": "화염파"
+   "ko": "화염파",
+   "icon": "icons/skills/Flameblast.webp"
   },
   {
    "en": "Flash Grenade",
-   "ko": "섬광 유탄"
+   "ko": "섬광 유탄",
+   "icon": "icons/skills/Flash_Grenade.webp"
   },
   {
    "en": "Flicker Strike",
-   "ko": "점멸 타격"
+   "ko": "점멸 타격",
+   "icon": "icons/skills/Flicker_Strike.webp"
   },
   {
    "en": "Forge Hammer",
-   "ko": "대장간 망치"
+   "ko": "대장간 망치",
+   "icon": "icons/skills/Forge_Hammer.webp"
   },
   {
    "en": "Fortifying Cry",
-   "ko": "보강하는 함성"
+   "ko": "보강하는 함성",
+   "icon": "icons/skills/Fortifying_Cry.webp"
   },
   {
    "en": "Fragmentation Rounds",
-   "ko": "파편 탄환"
+   "ko": "파편 탄환",
+   "icon": "icons/skills/Fragmentation_Rounds.webp"
   },
   {
    "en": "Fragments Of The Past",
-   "ko": "과거의 조각"
+   "ko": "과거의 조각",
+   "icon": "icons/skills/Fragments_Of_The_Past.webp"
   },
   {
    "en": "Freezing Mark",
-   "ko": "동결의 징표"
+   "ko": "동결의 징표",
+   "icon": "icons/skills/Freezing_Mark.webp"
   },
   {
    "en": "Freezing Salvo",
-   "ko": "얼어붙는 포화"
+   "ko": "얼어붙는 포화",
+   "icon": "icons/skills/Freezing_Salvo.webp"
   },
   {
    "en": "Freezing Shards",
-   "ko": "동결의 파편"
+   "ko": "동결의 파편",
+   "icon": "icons/skills/Freezing_Shards.webp"
   },
   {
    "en": "Frost Bomb",
-   "ko": "서리 폭탄"
+   "ko": "서리 폭탄",
+   "icon": "icons/skills/Frost_Bomb.webp"
   },
   {
    "en": "Frost Darts",
-   "ko": "서리 화살침"
+   "ko": "서리 화살침",
+   "icon": "icons/skills/Frost_Darts.webp"
   },
   {
    "en": "Frost Wall",
-   "ko": "서리 방벽"
+   "ko": "서리 방벽",
+   "icon": "icons/skills/Frost_Wall.webp"
   },
   {
    "en": "Frostbolt",
-   "ko": "서리 구체"
+   "ko": "서리 구체",
+   "icon": "icons/skills/Frostbolt.webp"
   },
   {
    "en": "Frostflame Nova",
-   "ko": "서리불꽃 폭발"
+   "ko": "서리불꽃 폭발",
+   "icon": "icons/skills/Frostflame_Nova.webp"
   },
   {
    "en": "Frozen Locus",
-   "ko": "얼어붙은 궤적"
+   "ko": "얼어붙은 궤적",
+   "icon": "icons/skills/Frozen_Locus.webp"
   },
   {
    "en": "Fulminating Concoction",
-   "ko": "전격의 혼합물"
+   "ko": "전격의 혼합물",
+   "icon": "icons/skills/Fulminating_Concoction.webp"
   },
   {
    "en": "Fulmination",
-   "ko": "노호"
+   "ko": "노호",
+   "icon": "icons/skills/Fulmination.webp"
   },
   {
    "en": "Furious Slam",
-   "ko": "분개한 강타"
+   "ko": "분개한 강타",
+   "icon": "icons/skills/Furious_Slam.webp"
   },
   {
    "en": "Fury of the Mountain",
-   "ko": "산의 광분"
+   "ko": "산의 광분",
+   "icon": "icons/skills/Fury_of_the_Mountain.webp"
   },
   {
    "en": "Future-Past",
-   "ko": "미래-과거"
+   "ko": "미래-과거",
+   "icon": "icons/skills/Future-Past.webp"
   },
   {
    "en": "Galvanic Field",
-   "ko": "충격장"
+   "ko": "충격장",
+   "icon": "icons/skills/Galvanic_Field.webp"
   },
   {
    "en": "Galvanic Shards",
-   "ko": "충격 파편"
+   "ko": "충격 파편",
+   "icon": "icons/skills/Galvanic_Shards.webp"
   },
   {
    "en": "Gas Arrow",
-   "ko": "가스 화살"
+   "ko": "가스 화살",
+   "icon": "icons/skills/Gas_Arrow.webp"
   },
   {
    "en": "Gas Grenade",
-   "ko": "가스 유탄"
+   "ko": "가스 유탄",
+   "icon": "icons/skills/Gas_Grenade.webp"
   },
   {
    "en": "Gathering Storm",
-   "ko": "몰려드는 폭풍"
+   "ko": "몰려드는 폭풍",
+   "icon": "icons/skills/Gathering_Storm.webp"
   },
   {
    "en": "Gemini Surge",
-   "ko": "쌍둥이 쇄도"
+   "ko": "쌍둥이 쇄도",
+   "icon": "icons/skills/Gemini_Surge.webp"
   },
   {
    "en": "Ghost Dance",
-   "ko": "혼의 춤"
+   "ko": "혼의 춤",
+   "icon": "icons/skills/Ghost_Dance.webp"
   },
   {
    "en": "Glacial Bolt",
-   "ko": "빙하 볼트"
+   "ko": "빙하 볼트",
+   "icon": "icons/skills/Glacial_Bolt.webp"
   },
   {
    "en": "Glacial Cascade",
-   "ko": "빙하 폭포"
+   "ko": "빙하 폭포",
+   "icon": "icons/skills/Glacial_Cascade.webp"
   },
   {
    "en": "Glacial Lance",
-   "ko": "빙하 창"
+   "ko": "빙하 창",
+   "icon": "icons/skills/Glacial_Lance.webp"
   },
   {
    "en": "Grim Feast",
-   "ko": "으스스한 연회"
+   "ko": "으스스한 연회",
+   "icon": "icons/skills/Grim_Feast.webp"
   },
   {
    "en": "Grim Pillars",
-   "ko": "으스스한 기둥"
+   "ko": "으스스한 기둥",
+   "icon": "icons/skills/Grim_Pillars.webp"
   },
   {
    "en": "Hailstorm Rounds",
-   "ko": "우박폭풍 탄환"
+   "ko": "우박폭풍 탄환",
+   "icon": "icons/skills/Hailstorm_Rounds.webp"
   },
   {
    "en": "Hammer of the Gods",
-   "ko": "신들의 망치"
+   "ko": "신들의 망치",
+   "icon": "icons/skills/Hammer_of_the_Gods.webp"
   },
   {
    "en": "Hand of Chayula",
-   "ko": "차율라의 손"
+   "ko": "차율라의 손",
+   "icon": "icons/skills/Hand_of_Chayula.webp"
   },
   {
    "en": "Harbinger of Madness",
-   "ko": "광기의 선구자"
+   "ko": "광기의 선구자",
+   "icon": "icons/skills/Harbinger_of_Madness.webp"
   },
   {
    "en": "Heart of Ice",
-   "ko": "얼음의 심장"
+   "ko": "얼음의 심장",
+   "icon": "icons/skills/Heart_of_Ice.webp"
   },
   {
    "en": "Herald of Ash",
-   "ko": "재의 전령"
+   "ko": "재의 전령",
+   "icon": "icons/skills/Herald_of_Ash.webp"
   },
   {
    "en": "Herald of Blood",
-   "ko": "피의 전령"
+   "ko": "피의 전령",
+   "icon": "icons/skills/Herald_of_Blood.webp"
   },
   {
    "en": "Herald of Ice",
-   "ko": "얼음의 전령"
+   "ko": "얼음의 전령",
+   "icon": "icons/skills/Herald_of_Ice.webp"
   },
   {
    "en": "Herald of Plague",
-   "ko": "역병의 전령"
+   "ko": "역병의 전령",
+   "icon": "icons/skills/Herald_of_Plague.webp"
   },
   {
    "en": "Herald of the Royal Queen",
-   "ko": "위풍당당한 여왕의 전령"
+   "ko": "위풍당당한 여왕의 전령",
+   "icon": "icons/skills/Herald_of_the_Royal_Queen.webp"
   },
   {
    "en": "Herald of Thunder",
-   "ko": "천둥의 전령"
+   "ko": "천둥의 전령",
+   "icon": "icons/skills/Herald_of_Thunder.webp"
   },
   {
    "en": "Hexblast",
-   "ko": "사술 폭발"
+   "ko": "사술 폭발",
+   "icon": "icons/skills/Hexblast.webp"
   },
   {
    "en": "High Velocity Rounds",
-   "ko": "고속 탄환"
+   "ko": "고속 탄환",
+   "icon": "icons/skills/High_Velocity_Rounds.webp"
   },
   {
    "en": "Hollow Focus",
-   "ko": "공허의 집중"
+   "ko": "공허의 집중",
+   "icon": "icons/skills/Hollow_Focus.webp"
   },
   {
    "en": "Hollow Form",
-   "ko": "공허의 형상"
+   "ko": "공허의 형상",
+   "icon": "icons/skills/Hollow_Form.webp"
   },
   {
    "en": "Hollow Resonance",
-   "ko": "공허의 공명"
+   "ko": "공허의 공명",
+   "icon": "icons/skills/Hollow_Resonance.webp"
   },
   {
    "en": "Hollow Shell",
-   "ko": "공허의 껍데기"
+   "ko": "공허의 껍데기",
+   "icon": "icons/skills/Hollow_Shell.webp"
   },
   {
    "en": "Ice Nova",
-   "ko": "얼음 폭발"
+   "ko": "얼음 폭발",
+   "icon": "icons/skills/Ice_Nova.webp"
   },
   {
    "en": "Ice Shards",
-   "ko": "얼음 파편"
+   "ko": "얼음 파편",
+   "icon": "icons/skills/Ice_Shards.webp"
   },
   {
    "en": "Ice Shot",
-   "ko": "얼음 화살"
+   "ko": "얼음 화살",
+   "icon": "icons/skills/Ice_Shot.webp"
   },
   {
    "en": "Ice Strike",
-   "ko": "얼음 타격"
+   "ko": "얼음 타격",
+   "icon": "icons/skills/Ice_Strike.webp"
   },
   {
    "en": "Ice-Tipped Arrows",
-   "ko": "얼음촉 화살"
+   "ko": "얼음촉 화살",
+   "icon": "icons/skills/Ice-Tipped_Arrows.webp"
   },
   {
    "en": "Icestorm",
-   "ko": "얼음태풍"
+   "ko": "얼음태풍",
+   "icon": "icons/skills/Icestorm.webp"
   },
   {
    "en": "Impurity",
-   "ko": "부정함"
+   "ko": "부정함",
+   "icon": "icons/skills/Impurity.webp"
   },
   {
    "en": "Incendiary Shot",
-   "ko": "소이 사격"
+   "ko": "소이 사격",
+   "icon": "icons/skills/Incendiary_Shot.webp"
   },
   {
    "en": "Incinerate",
-   "ko": "소각"
+   "ko": "소각",
+   "icon": "icons/skills/Incinerate.webp"
   },
   {
    "en": "Inevitable Agony",
-   "ko": "피할 수 없는 고뇌"
+   "ko": "피할 수 없는 고뇌",
+   "icon": "icons/skills/Inevitable_Agony.webp"
   },
   {
    "en": "Infernal Cry",
-   "ko": "지옥불 함성"
+   "ko": "지옥불 함성",
+   "icon": "icons/skills/Infernal_Cry.webp"
   },
   {
    "en": "Into the Breach",
-   "ko": "균열 속으로"
+   "ko": "균열 속으로",
+   "icon": "icons/skills/Into_the_Breach.webp"
   },
   {
    "en": "Iron Ward",
-   "ko": "철의 수호"
+   "ko": "철의 수호",
+   "icon": "icons/skills/Iron_Ward.webp"
   },
   {
    "en": "Kelari, the Tainted Sands",
-   "ko": "더럽혀진 사막 켈라리"
+   "ko": "더럽혀진 사막 켈라리",
+   "icon": "icons/skills/Kelari_2C_the_Tainted_Sands.webp"
   },
   {
    "en": "Kelari's Deception",
-   "ko": "켈라리의 기만"
+   "ko": "켈라리의 기만",
+   "icon": "icons/skills/Kelaris_Deception.webp"
   },
   {
    "en": "Kelari's Judgment",
-   "ko": "켈라리의 심판"
+   "ko": "켈라리의 심판",
+   "icon": "icons/skills/Kelaris_Judgment.webp"
   },
   {
    "en": "Kelari's Malediction",
-   "ko": "켈라리의 악담"
+   "ko": "켈라리의 악담",
+   "icon": "icons/skills/Kelaris_Malediction.webp"
   },
   {
    "en": "Killing Palm",
-   "ko": "살상 장법"
+   "ko": "살상 장법",
+   "icon": "icons/skills/Killing_Palm.webp"
   },
   {
    "en": "Leap Slam",
-   "ko": "도약 강타"
+   "ko": "도약 강타",
+   "icon": "icons/skills/Leap_Slam.webp"
   },
   {
    "en": "Leylines",
-   "ko": "지맥"
+   "ko": "지맥",
+   "icon": "icons/skills/Leylines.webp"
   },
   {
    "en": "Life Remnants",
-   "ko": "생명 잔류물"
+   "ko": "생명 잔류물",
+   "icon": "icons/skills/Life_Remnants.webp"
   },
   {
    "en": "Lightning Arrow",
-   "ko": "번개 화살"
+   "ko": "번개 화살",
+   "icon": "icons/skills/Lightning_Arrow.webp"
   },
   {
    "en": "Lightning Bolt",
-   "ko": "낙뢰"
+   "ko": "낙뢰",
+   "icon": "icons/skills/Lightning_Bolt.webp"
   },
   {
    "en": "Lightning Conduit",
-   "ko": "번개 도관"
+   "ko": "번개 도관",
+   "icon": "icons/skills/Lightning_Conduit.webp"
   },
   {
    "en": "Lightning Rod",
-   "ko": "피뢰침"
+   "ko": "피뢰침",
+   "icon": "icons/skills/Lightning_Rod.webp"
   },
   {
    "en": "Lightning Spear",
-   "ko": "번개 창"
+   "ko": "번개 창",
+   "icon": "icons/skills/Lightning_Spear.webp"
   },
   {
    "en": "Lightning Warp",
-   "ko": "번개 차원 이동"
+   "ko": "번개 차원 이동",
+   "icon": "icons/skills/Lightning_Warp.webp"
   },
   {
    "en": "Lingering Illusion",
-   "ko": "지속되는 환상"
+   "ko": "지속되는 환상",
+   "icon": "icons/skills/Lingering_Illusion.webp"
   },
   {
    "en": "Living Bomb",
-   "ko": "살아있는 폭탄"
+   "ko": "살아있는 폭탄",
+   "icon": "icons/skills/Living_Bomb.webp"
   },
   {
    "en": "Lunar Assault",
-   "ko": "달의 공격"
+   "ko": "달의 공격",
+   "icon": "icons/skills/Lunar_Assault.webp"
   },
   {
    "en": "Lunar Blessing",
-   "ko": "달의 축복"
+   "ko": "달의 축복",
+   "icon": "icons/skills/Lunar_Blessing.webp"
   },
   {
    "en": "Mace Strike",
-   "ko": "철퇴 타격"
+   "ko": "철퇴 타격",
+   "icon": "icons/skills/Mace_Strike.webp"
   },
   {
    "en": "Magma Barrier",
-   "ko": "마그마 장벽"
+   "ko": "마그마 장벽",
+   "icon": "icons/skills/Magma_Barrier.webp"
   },
   {
    "en": "Magnetic Salvo",
-   "ko": "자성 포화"
+   "ko": "자성 포화",
+   "icon": "icons/skills/Magnetic_Salvo.webp"
   },
   {
    "en": "Malice",
-   "ko": "적의"
+   "ko": "적의",
+   "icon": "icons/skills/Malice.webp"
   },
   {
    "en": "Mana Drain",
-   "ko": "마나 고갈"
+   "ko": "마나 고갈",
+   "icon": "icons/skills/Mana_Drain.webp"
   },
   {
    "en": "Mana Remnants",
-   "ko": "마나 잔류물"
+   "ko": "마나 잔류물",
+   "icon": "icons/skills/Mana_Remnants.webp"
   },
   {
    "en": "Mana Tempest",
-   "ko": "마나 폭풍"
+   "ko": "마나 폭풍",
+   "icon": "icons/skills/Mana_Tempest.webp"
   },
   {
    "en": "Manifest Weapon",
-   "ko": "무기 현현"
+   "ko": "무기 현현",
+   "icon": "icons/skills/Manifest_Weapon.webp"
   },
   {
    "en": "Mantra of Destruction",
-   "ko": "파괴의 주문"
+   "ko": "파괴의 주문",
+   "icon": "icons/skills/Mantra_of_Destruction.webp"
   },
   {
    "en": "Maul",
-   "ko": "사나운 발톱"
+   "ko": "사나운 발톱",
+   "icon": "icons/skills/Maul.webp"
   },
   {
    "en": "Meditate",
-   "ko": "명상"
+   "ko": "명상",
+   "icon": "icons/skills/Meditate.webp"
   },
   {
    "en": "Midnight Zenith",
-   "ko": "심야의 북극성"
+   "ko": "심야의 북극성",
+   "icon": "icons/skills/Midnight_Zenith.webp"
   },
   {
    "en": "Mirage Archer",
-   "ko": "신기루 궁수"
+   "ko": "신기루 궁수",
+   "icon": "icons/skills/Mirage_Archer.webp"
   },
   {
    "en": "Mirage Deadeye",
-   "ko": "신기루 명사수"
+   "ko": "신기루 명사수",
+   "icon": "icons/skills/Mirage_Deadeye.webp"
   },
   {
    "en": "Mirror of Refraction",
-   "ko": "굴절의 거울"
+   "ko": "굴절의 거울",
+   "icon": "icons/skills/Mirror_of_Refraction.webp"
   },
   {
    "en": "Mist Raven",
-   "ko": "연무의 큰까마귀"
+   "ko": "연무의 큰까마귀",
+   "icon": "icons/skills/Mist_Raven.webp"
   },
   {
    "en": "Molten Blast",
-   "ko": "녹아내린 폭발"
+   "ko": "녹아내린 폭발",
+   "icon": "icons/skills/Molten_Blast.webp"
   },
   {
    "en": "Molten Crash",
-   "ko": "용암 충격"
+   "ko": "용암 충격",
+   "icon": "icons/skills/Molten_Crash.webp"
   },
   {
    "en": "Molten Shower",
-   "ko": "녹아내린 소나기"
+   "ko": "녹아내린 소나기",
+   "icon": "icons/skills/Molten_Shower.webp"
   },
   {
    "en": "Moment of Vulnerability",
-   "ko": "취약성의 순간"
+   "ko": "취약성의 순간",
+   "icon": "icons/skills/Moment_of_Vulnerability.webp"
   },
   {
    "en": "Mortar Cannon",
-   "ko": "박격포 대포"
+   "ko": "박격포 대포",
+   "icon": "icons/skills/Mortar_Cannon.webp"
   },
   {
    "en": "Navira, the Last Mirage",
-   "ko": "최후의 신기루 나비라"
+   "ko": "최후의 신기루 나비라",
+   "icon": "icons/skills/Navira_2C_the_Last_Mirage.webp"
   },
   {
    "en": "Navira's Fracturing",
-   "ko": "나비라의 파열"
+   "ko": "나비라의 파열",
+   "icon": "icons/skills/Naviras_Fracturing.webp"
   },
   {
    "en": "Navira's Oasis",
-   "ko": "나비라의 오아시스"
+   "ko": "나비라의 오아시스",
+   "icon": "icons/skills/Naviras_Oasis.webp"
   },
   {
    "en": "Navira's Well",
-   "ko": "나비라의 우물"
+   "ko": "나비라의 우물",
+   "icon": "icons/skills/Naviras_Well.webp"
   },
   {
    "en": "Oil Barrage",
-   "ko": "기름 포화"
+   "ko": "기름 포화",
+   "icon": "icons/skills/Oil_Barrage.webp"
   },
   {
    "en": "Oil Grenade",
-   "ko": "기름 유탄"
+   "ko": "기름 유탄",
+   "icon": "icons/skills/Oil_Grenade.webp"
   },
   {
    "en": "Orb of Storms",
-   "ko": "폭풍 보주"
+   "ko": "폭풍 보주",
+   "icon": "icons/skills/Orb_of_Storms.webp"
   },
   {
    "en": "Overwhelming Presence",
-   "ko": "압도적인 존재감"
+   "ko": "압도적인 존재감",
+   "icon": "icons/skills/Overwhelming_Presence.webp"
   },
   {
    "en": "Pain Offering",
-   "ko": "고통의 공물"
+   "ko": "고통의 공물",
+   "icon": "icons/skills/Pain_Offering.webp"
   },
   {
    "en": "Parry",
-   "ko": "흘려보내기"
+   "ko": "흘려보내기",
+   "icon": "icons/skills/Parry.webp"
   },
   {
    "en": "Perfect Strike",
-   "ko": "완벽한 타격"
+   "ko": "완벽한 타격",
+   "icon": "icons/skills/Perfect_Strike.webp"
   },
   {
    "en": "Permafrost Bolts",
-   "ko": "영구 결빙 볼트"
+   "ko": "영구 결빙 볼트",
+   "icon": "icons/skills/Permafrost_Bolts.webp"
   },
   {
    "en": "Phantasmal Arrow",
-   "ko": "환영의 화살"
+   "ko": "환영의 화살",
+   "icon": "icons/skills/Phantasmal_Arrow.webp"
   },
   {
    "en": "Pinnacle of Power",
-   "ko": "힘의 정점"
+   "ko": "힘의 정점",
+   "icon": "icons/skills/Pinnacle_of_Power.webp"
   },
   {
    "en": "Plague Bearer",
-   "ko": "독성 운반자"
+   "ko": "독성 운반자",
+   "icon": "icons/skills/Plague_Bearer.webp"
   },
   {
    "en": "Plasma Blast",
-   "ko": "플라스마 폭발"
+   "ko": "플라스마 폭발",
+   "icon": "icons/skills/Plasma_Blast.webp"
   },
   {
    "en": "Poisonburst Arrow",
-   "ko": "독 폭발 화살"
+   "ko": "독 폭발 화살",
+   "icon": "icons/skills/Poisonburst_Arrow.webp"
   },
   {
    "en": "Pounce",
-   "ko": "급습"
+   "ko": "급습",
+   "icon": "icons/skills/Pounce.webp"
   },
   {
    "en": "Power Siphon",
-   "ko": "권능 착취"
+   "ko": "권능 착취",
+   "icon": "icons/skills/Power_Siphon.webp"
   },
   {
    "en": "Powered by Verisium",
-   "ko": "베리시움 동력 공급"
+   "ko": "베리시움 동력 공급",
+   "icon": "icons/skills/Powered_by_Verisium.webp"
   },
   {
    "en": "Primal Bounty",
-   "ko": "원시 하사품"
+   "ko": "원시 하사품",
+   "icon": "icons/skills/Primal_Bounty.webp"
   },
   {
    "en": "Primal Strikes",
-   "ko": "원시 타격"
+   "ko": "원시 타격",
+   "icon": "icons/skills/Primal_Strikes.webp"
   },
   {
    "en": "Profane Ritual",
-   "ko": "부정한 의식"
+   "ko": "부정한 의식",
+   "icon": "icons/skills/Profane_Ritual.webp"
   },
   {
    "en": "Punch",
-   "ko": "주먹질"
+   "ko": "주먹질",
+   "icon": "icons/skills/Punch.webp"
   },
   {
    "en": "Purity of Fire",
-   "ko": "불의 순수함"
+   "ko": "불의 순수함",
+   "icon": "icons/skills/Purity_of_Fire.webp"
   },
   {
    "en": "Purity of Ice",
-   "ko": "얼음의 순수함"
+   "ko": "얼음의 순수함",
+   "icon": "icons/skills/Purity_of_Ice.webp"
   },
   {
    "en": "Purity of Lightning",
-   "ko": "번개의 순수함"
+   "ko": "번개의 순수함",
+   "icon": "icons/skills/Purity_of_Lightning.webp"
   },
   {
    "en": "Quarterstaff Strike",
-   "ko": "육척봉 타격"
+   "ko": "육척봉 타격",
+   "icon": "icons/skills/Quarterstaff_Strike.webp"
   },
   {
    "en": "Queen's Procession",
-   "ko": "여왕의 행진"
+   "ko": "여왕의 행진",
+   "icon": "icons/skills/Queens_Procession.webp"
   },
   {
    "en": "Raging Spirits",
-   "ko": "격노의 유령"
+   "ko": "격노의 유령",
+   "icon": "icons/skills/Raging_Spirits.webp"
   },
   {
    "en": "Rain of Arrows",
-   "ko": "화살비"
+   "ko": "화살비",
+   "icon": "icons/skills/Rain_of_Arrows.webp"
   },
   {
    "en": "Rain of Blades",
-   "ko": "칼날의 비"
+   "ko": "칼날의 비",
+   "icon": "icons/skills/Rain_of_Blades.webp"
   },
   {
    "en": "Raise Shield",
-   "ko": "방패 들기"
+   "ko": "방패 들기",
+   "icon": "icons/skills/Raise_Shield.webp"
   },
   {
    "en": "Raise Zombie",
-   "ko": "좀비 소환"
+   "ko": "좀비 소환",
+   "icon": "icons/skills/Raise_Zombie.webp"
   },
   {
    "en": "Rake",
-   "ko": "갈퀴질"
+   "ko": "갈퀴질",
+   "icon": "icons/skills/Rake.webp"
   },
   {
    "en": "Rampage",
-   "ko": "광란"
+   "ko": "광란",
+   "icon": "icons/skills/Rampage.webp"
   },
   {
    "en": "Rapid Assault",
-   "ko": "신속한 공격"
+   "ko": "신속한 공격",
+   "icon": "icons/skills/Rapid_Assault.webp"
   },
   {
    "en": "Rapid Shot",
-   "ko": "신속한 사격"
+   "ko": "신속한 사격",
+   "icon": "icons/skills/Rapid_Shot.webp"
   },
   {
    "en": "Ravenous Swarm",
-   "ko": "굶주린 무리"
+   "ko": "굶주린 무리",
+   "icon": "icons/skills/Ravenous_Swarm.webp"
   },
   {
    "en": "Reap",
-   "ko": "낫질"
+   "ko": "낫질",
+   "icon": "icons/skills/Reap.webp"
   },
   {
    "en": "Reaper's Invocation",
-   "ko": "수확자의 기원"
+   "ko": "수확자의 기원",
+   "icon": "icons/skills/Reapers_Invocation.webp"
   },
   {
    "en": "Refutation",
-   "ko": "부인"
+   "ko": "부인",
+   "icon": "icons/skills/Refutation.webp"
   },
   {
    "en": "Remnants of Kalguur",
-   "ko": "칼구르의 잔류물"
+   "ko": "칼구르의 잔류물",
+   "icon": "icons/skills/Remnants_of_Kalguur.webp"
   },
   {
    "en": "Rend",
-   "ko": "분리"
+   "ko": "분리",
+   "icon": "icons/skills/Rend.webp"
   },
   {
    "en": "Repulsion",
-   "ko": "반발"
+   "ko": "반발",
+   "icon": "icons/skills/Repulsion.webp"
   },
   {
    "en": "Requiem",
-   "ko": "진혼곡"
+   "ko": "진혼곡",
+   "icon": "icons/skills/Requiem.webp"
   },
   {
    "en": "Resonating Shield",
-   "ko": "공명하는 방패"
+   "ko": "공명하는 방패",
+   "icon": "icons/skills/Resonating_Shield.webp"
   },
   {
    "en": "Rhoa Mount",
-   "ko": "로아 탈것"
+   "ko": "로아 탈것",
+   "icon": "icons/skills/Rhoa_Mount.webp"
   },
   {
    "en": "Righteous Descent",
-   "ko": "정의로운 강하"
+   "ko": "정의로운 강하",
+   "icon": "icons/skills/Righteous_Descent.webp"
   },
   {
    "en": "Rite of Restoration",
-   "ko": "재생의 의례"
+   "ko": "재생의 의례",
+   "icon": "icons/skills/Rite_of_Restoration.webp"
   },
   {
    "en": "Ritual Sacrifice",
-   "ko": "의식 희생"
+   "ko": "의식 희생",
+   "icon": "icons/skills/Ritual_Sacrifice.webp"
   },
   {
    "en": "Rolling Magma",
-   "ko": "몰려오는 마그마"
+   "ko": "몰려오는 마그마",
+   "icon": "icons/skills/Rolling_Magma.webp"
   },
   {
    "en": "Rolling Slam",
-   "ko": "몰려오는 강타"
+   "ko": "몰려오는 강타",
+   "icon": "icons/skills/Rolling_Slam.webp"
   },
   {
    "en": "Runic Reprieve",
-   "ko": "룬의 유예"
+   "ko": "룬의 유예",
+   "icon": "icons/skills/Runic_Reprieve.webp"
   },
   {
    "en": "Runic Tempering",
-   "ko": "룬의 담금질"
+   "ko": "룬의 담금질",
+   "icon": "icons/skills/Runic_Tempering.webp"
   },
   {
    "en": "Ruzhan, the Blazing Sword",
-   "ko": "불타는 검 루잔"
+   "ko": "불타는 검 루잔",
+   "icon": "icons/skills/Ruzhan_2C_the_Blazing_Sword.webp"
   },
   {
    "en": "Ruzhan's Fury",
-   "ko": "루잔의 광분"
+   "ko": "루잔의 광분",
+   "icon": "icons/skills/Ruzhans_Fury.webp"
   },
   {
    "en": "Ruzhan's Reckoning",
-   "ko": "루잔의 선고"
+   "ko": "루잔의 선고",
+   "icon": "icons/skills/Ruzhans_Reckoning.webp"
   },
   {
    "en": "Ruzhan's Trap",
-   "ko": "루잔의 덫"
+   "ko": "루잔의 덫",
+   "icon": "icons/skills/Ruzhans_Trap.webp"
   },
   {
    "en": "Sacrifice",
-   "ko": "희생"
+   "ko": "희생",
+   "icon": "icons/skills/Sacrifice.webp"
   },
   {
    "en": "Sanguine Revelry",
-   "ko": "핏빛 환락"
+   "ko": "핏빛 환락",
+   "icon": "icons/skills/Sanguine_Revelry.webp"
   },
   {
    "en": "Savage Fury",
-   "ko": "야만적인 광분"
+   "ko": "야만적인 광분",
+   "icon": "icons/skills/Savage_Fury.webp"
   },
   {
    "en": "Scavenged Plating",
-   "ko": "주운 판금"
+   "ko": "주운 판금",
+   "icon": "icons/skills/Scavenged_Plating.webp"
   },
   {
    "en": "Seismic Cry",
-   "ko": "지진 함성"
+   "ko": "지진 함성",
+   "icon": "icons/skills/Seismic_Cry.webp"
   },
   {
    "en": "Shard Scavenger",
-   "ko": "파편 청소부"
+   "ko": "파편 청소부",
+   "icon": "icons/skills/Shard_Scavenger.webp"
   },
   {
    "en": "Shattering Concoction",
-   "ko": "산산조각의 혼합물"
+   "ko": "산산조각의 혼합물",
+   "icon": "icons/skills/Shattering_Concoction.webp"
   },
   {
    "en": "Shattering Palm",
-   "ko": "격파 장법"
+   "ko": "격파 장법",
+   "icon": "icons/skills/Shattering_Palm.webp"
   },
   {
    "en": "Shattering Spite",
-   "ko": "악의 파편"
+   "ko": "악의 파편",
+   "icon": "icons/skills/Shattering_Spite.webp"
   },
   {
    "en": "Shield Charge",
-   "ko": "방패 돌진"
+   "ko": "방패 돌진",
+   "icon": "icons/skills/Shield_Charge.webp"
   },
   {
    "en": "Shield Wall",
-   "ko": "방패의 벽"
+   "ko": "방패의 벽",
+   "icon": "icons/skills/Shield_Wall.webp"
   },
   {
    "en": "Shockburst Rounds",
-   "ko": "감전 파열 탄환"
+   "ko": "감전 파열 탄환",
+   "icon": "icons/skills/Shockburst_Rounds.webp"
   },
   {
    "en": "Shockchain Arrow",
-   "ko": "감전연쇄 화살"
+   "ko": "감전연쇄 화살",
+   "icon": "icons/skills/Shockchain_Arrow.webp"
   },
   {
    "en": "Shockwave Totem",
-   "ko": "충격파 토템"
+   "ko": "충격파 토템",
+   "icon": "icons/skills/Shockwave_Totem.webp"
   },
   {
    "en": "Shred",
-   "ko": "발기기"
+   "ko": "발기기",
+   "icon": "icons/skills/Shred.webp"
   },
   {
    "en": "Shroud",
-   "ko": "Shroud"
+   "ko": "Shroud",
+   "icon": "icons/skills/Shroud.webp"
   },
   {
    "en": "Siege Ballista",
-   "ko": "공성 쇠뇌"
+   "ko": "공성 쇠뇌",
+   "icon": "icons/skills/Siege_Ballista.webp"
   },
   {
    "en": "Siege Cascade",
-   "ko": "공성 폭포"
+   "ko": "공성 폭포",
+   "icon": "icons/skills/Siege_Cascade.webp"
   },
   {
    "en": "Sigil of Power",
-   "ko": "힘의 부적"
+   "ko": "힘의 부적",
+   "icon": "icons/skills/Sigil_of_Power.webp"
   },
   {
    "en": "Siphon Elements",
-   "ko": "원소 착취"
+   "ko": "원소 착취",
+   "icon": "icons/skills/Siphon_Elements.webp"
   },
   {
    "en": "Siphoning Strike",
-   "ko": "착취 타격"
+   "ko": "착취 타격",
+   "icon": "icons/skills/Siphoning_Strike.webp"
   },
   {
    "en": "Skeletal Arsonist",
-   "ko": "해골 방화범"
+   "ko": "해골 방화범",
+   "icon": "icons/skills/Skeletal_Arsonist.webp"
   },
   {
    "en": "Skeletal Brute",
-   "ko": "해골 돌격병"
+   "ko": "해골 돌격병",
+   "icon": "icons/skills/Skeletal_Brute.webp"
   },
   {
    "en": "Skeletal Cleric",
-   "ko": "해골 성직자"
+   "ko": "해골 성직자",
+   "icon": "icons/skills/Skeletal_Cleric.webp"
   },
   {
    "en": "Skeletal Frost Mage",
-   "ko": "해골 서리 마법사"
+   "ko": "해골 서리 마법사",
+   "icon": "icons/skills/Skeletal_Frost_Mage.webp"
   },
   {
    "en": "Skeletal Reaver",
-   "ko": "해골 강탈자"
+   "ko": "해골 강탈자",
+   "icon": "icons/skills/Skeletal_Reaver.webp"
   },
   {
    "en": "Skeletal Sniper",
-   "ko": "해골 저격수"
+   "ko": "해골 저격수",
+   "icon": "icons/skills/Skeletal_Sniper.webp"
   },
   {
    "en": "Skeletal Storm Mage",
-   "ko": "해골 폭풍 마법사"
+   "ko": "해골 폭풍 마법사",
+   "icon": "icons/skills/Skeletal_Storm_Mage.webp"
   },
   {
    "en": "Skeletal Warrior",
-   "ko": "해골 전사"
+   "ko": "해골 전사",
+   "icon": "icons/skills/Skeletal_Warrior.webp"
   },
   {
    "en": "Skyfall",
-   "ko": "하늘 붕괴"
+   "ko": "하늘 붕괴",
+   "icon": "icons/skills/Skyfall.webp"
   },
   {
    "en": "Snap",
-   "ko": "돌발"
+   "ko": "돌발",
+   "icon": "icons/skills/Snap.webp"
   },
   {
    "en": "Snipe",
-   "ko": "저격"
+   "ko": "저격",
+   "icon": "icons/skills/Snipe.webp"
   },
   {
    "en": "Sniper's Mark",
-   "ko": "저격수의 징표"
+   "ko": "저격수의 징표",
+   "icon": "icons/skills/Snipers_Mark.webp"
   },
   {
    "en": "Soaring Midnight",
-   "ko": "솟구치는 심야"
+   "ko": "솟구치는 심야",
+   "icon": "icons/skills/Soaring_Midnight.webp"
   },
   {
    "en": "Solar Orb",
-   "ko": "태양의 보주"
+   "ko": "태양의 보주",
+   "icon": "icons/skills/Solar_Orb.webp"
   },
   {
    "en": "Sorcery Ward",
-   "ko": "마술의 수호"
+   "ko": "마술의 수호",
+   "icon": "icons/skills/Sorcery_Ward.webp"
   },
   {
    "en": "Soul Offering",
-   "ko": "영혼 공물"
+   "ko": "영혼 공물",
+   "icon": "icons/skills/Soul_Offering.webp"
   },
   {
    "en": "Soulrend",
-   "ko": "영혼 분리"
+   "ko": "영혼 분리",
+   "icon": "icons/skills/Soulrend.webp"
   },
   {
    "en": "Spark",
-   "ko": "전기불꽃"
+   "ko": "전기불꽃",
+   "icon": "icons/skills/Spark.webp"
   },
   {
    "en": "Spear of Solaris",
-   "ko": "솔라리스의 창"
+   "ko": "솔라리스의 창",
+   "icon": "icons/skills/Spear_of_Solaris.webp"
   },
   {
    "en": "Spear Stab",
-   "ko": "창 찌르기"
+   "ko": "창 찌르기",
+   "icon": "icons/skills/Spear_Stab.webp"
   },
   {
    "en": "Spear Throw",
-   "ko": "창 투척"
+   "ko": "창 투척",
+   "icon": "icons/skills/Spear_Throw.webp"
   },
   {
    "en": "Spearfield",
-   "ko": "창의 지대"
+   "ko": "창의 지대",
+   "icon": "icons/skills/Spearfield.webp"
   },
   {
    "en": "Spell Totem",
-   "ko": "주문 토템"
+   "ko": "주문 토템",
+   "icon": "icons/skills/Spell_Totem.webp"
   },
   {
    "en": "Spellslinger",
-   "ko": "주문투척"
+   "ko": "주문투척",
+   "icon": "icons/skills/Spellslinger.webp"
   },
   {
    "en": "Spiral Volley",
-   "ko": "나선 사격 공세"
+   "ko": "나선 사격 공세",
+   "icon": "icons/skills/Spiral_Volley.webp"
   },
   {
    "en": "Spiraling Conspiracy",
-   "ko": "고조되는 음모"
+   "ko": "고조되는 음모",
+   "icon": "icons/skills/Spiraling_Conspiracy.webp"
   },
   {
    "en": "Spirit Vessel",
-   "ko": "혼백 그릇"
+   "ko": "혼백 그릇",
+   "icon": "icons/skills/Spirit_Vessel.webp"
   },
   {
    "en": "Staggering Palm",
-   "ko": "충격 장법"
+   "ko": "충격 장법",
+   "icon": "icons/skills/Staggering_Palm.webp"
   },
   {
    "en": "Stampede",
-   "ko": "쇄도"
+   "ko": "쇄도",
+   "icon": "icons/skills/Stampede.webp"
   },
   {
    "en": "Starborn Onslaught",
-   "ko": "별붙이 맹공"
+   "ko": "별붙이 맹공",
+   "icon": "icons/skills/Starborn_Onslaught.webp"
   },
   {
    "en": "Storm Lance",
-   "ko": "폭풍의 창"
+   "ko": "폭풍의 창",
+   "icon": "icons/skills/Storm_Lance.webp"
   },
   {
    "en": "Storm Wave",
-   "ko": "폭풍 파도"
+   "ko": "폭풍 파도",
+   "icon": "icons/skills/Storm_Wave.webp"
   },
   {
    "en": "Stormblast Bolts",
-   "ko": "태풍 파열 볼트"
+   "ko": "태풍 파열 볼트",
+   "icon": "icons/skills/Stormblast_Bolts.webp"
   },
   {
    "en": "Stormcaller Arrow",
-   "ko": "폭풍 소환사 화살"
+   "ko": "폭풍 소환사 화살",
+   "icon": "icons/skills/Stormcaller_Arrow.webp"
   },
   {
    "en": "Summon Infernal Hound",
-   "ko": "지옥불 사냥개 소환"
+   "ko": "지옥불 사냥개 소환",
+   "icon": "icons/skills/Summon_Infernal_Hound.webp"
   },
   {
    "en": "Sunder",
-   "ko": "산산조각"
+   "ko": "산산조각",
+   "icon": "icons/skills/Sunder.webp"
   },
   {
    "en": "Supercharged Slam",
-   "ko": "초과 충전 강타"
+   "ko": "초과 충전 강타",
+   "icon": "icons/skills/Supercharged_Slam.webp"
   },
   {
    "en": "Supporting Fire",
-   "ko": "지원 사격"
+   "ko": "지원 사격",
+   "icon": "icons/skills/Supporting_Fire.webp"
   },
   {
    "en": "Sword Slash",
-   "ko": "검 베기"
+   "ko": "검 베기",
+   "icon": "icons/skills/Sword_Slash.webp"
   },
   {
    "en": "Tame Beast",
-   "ko": "짐승 길들이기"
+   "ko": "짐승 길들이기",
+   "icon": "icons/skills/Tame_Beast.webp"
   },
   {
    "en": "Temper Weapon",
-   "ko": "무기 담금질"
+   "ko": "무기 담금질",
+   "icon": "icons/skills/Temper_Weapon.webp"
   },
   {
    "en": "Tempest Bell",
-   "ko": "폭풍의 종"
+   "ko": "폭풍의 종",
+   "icon": "icons/skills/Tempest_Bell.webp"
   },
   {
    "en": "Tempest Flurry",
-   "ko": "폭풍의 질풍"
+   "ko": "폭풍의 질풍",
+   "icon": "icons/skills/Tempest_Flurry.webp"
   },
   {
    "en": "Temporal Chains",
-   "ko": "시간의 사슬"
+   "ko": "시간의 사슬",
+   "icon": "icons/skills/Temporal_Chains.webp"
   },
   {
    "en": "Temporal Rift",
-   "ko": "시간의 균열"
+   "ko": "시간의 균열",
+   "icon": "icons/skills/Temporal_Rift.webp"
   },
   {
    "en": "The Stars Answer",
-   "ko": "별들의 응답"
+   "ko": "별들의 응답",
+   "icon": "icons/skills/The_Stars_Answer.webp"
   },
   {
    "en": "Thrashing Vines",
-   "ko": "몸부림치는 덩굴"
+   "ko": "몸부림치는 덩굴",
+   "icon": "icons/skills/Thrashing_Vines.webp"
   },
   {
    "en": "Thundergod's Wrath",
-   "ko": "천둥신의 진노"
+   "ko": "천둥신의 진노",
+   "icon": "icons/skills/Thundergods_Wrath.webp"
   },
   {
    "en": "Thunderous Leap",
-   "ko": "천둥 같은 도약"
+   "ko": "천둥 같은 도약",
+   "icon": "icons/skills/Thunderous_Leap.webp"
   },
   {
    "en": "Thunderstorm",
-   "ko": "뇌우"
+   "ko": "뇌우",
+   "icon": "icons/skills/Thunderstorm.webp"
   },
   {
    "en": "Time Freeze",
-   "ko": "시간 동결"
+   "ko": "시간 동결",
+   "icon": "icons/skills/Time_Freeze.webp"
   },
   {
    "en": "Time of Need",
-   "ko": "긴요한 시기"
+   "ko": "긴요한 시기",
+   "icon": "icons/skills/Time_of_Need.webp"
   },
   {
    "en": "Time Snap",
-   "ko": "시간 단절"
+   "ko": "시간 단절",
+   "icon": "icons/skills/Time_Snap.webp"
   },
   {
    "en": "Tornado",
-   "ko": "회오리"
+   "ko": "회오리",
+   "icon": "icons/skills/Tornado.webp"
   },
   {
    "en": "Tornado Shot",
-   "ko": "회오리 사격"
+   "ko": "회오리 사격",
+   "icon": "icons/skills/Tornado_Shot.webp"
   },
   {
    "en": "Toxic Domain",
-   "ko": "맹독성 영역"
+   "ko": "맹독성 영역",
+   "icon": "icons/skills/Toxic_Domain.webp"
   },
   {
    "en": "Toxic Growth",
-   "ko": "맹독성 종양"
+   "ko": "맹독성 종양",
+   "icon": "icons/skills/Toxic_Growth.webp"
   },
   {
    "en": "Trail of Caltrops",
-   "ko": "마름쇠의 발자취"
+   "ko": "마름쇠의 발자취",
+   "icon": "icons/skills/Trail_of_Caltrops.webp"
   },
   {
    "en": "Trinity",
-   "ko": "삼위일체"
+   "ko": "삼위일체",
+   "icon": "icons/skills/Trinity.webp"
   },
   {
    "en": "Triskelion Cascade",
-   "ko": "트리스켈리온의 폭포"
+   "ko": "트리스켈리온의 폭포",
+   "icon": "icons/skills/Triskelion_Cascade.webp"
   },
   {
    "en": "Twister",
-   "ko": "돌개바람"
+   "ko": "돌개바람",
+   "icon": "icons/skills/Twister.webp"
   },
   {
    "en": "Unbound Avatar",
-   "ko": "족쇄 풀린 화신"
+   "ko": "족쇄 풀린 화신",
+   "icon": "icons/skills/Unbound_Avatar.webp"
   },
   {
    "en": "Unearth",
-   "ko": "발굴"
+   "ko": "발굴",
+   "icon": "icons/skills/Unearth.webp"
   },
   {
    "en": "Unleash",
-   "ko": "촉발"
+   "ko": "촉발",
+   "icon": "icons/skills/Unleash.webp"
   },
   {
    "en": "Untether",
-   "ko": "연 끊기"
+   "ko": "연 끊기",
+   "icon": "icons/skills/Untether.webp"
   },
   {
    "en": "Valako's Charge",
-   "ko": "발라코의 책임"
+   "ko": "발라코의 책임",
+   "icon": "icons/skills/Valakos_Charge.webp"
   },
   {
    "en": "Vaulting Impact",
-   "ko": "뜀틀 충격"
+   "ko": "뜀틀 충격",
+   "icon": "icons/skills/Vaulting_Impact.webp"
   },
   {
    "en": "Verisium Manifestations",
-   "ko": "베리시움 현신"
+   "ko": "베리시움 현신",
+   "icon": "icons/skills/Verisium_Manifestations.webp"
   },
   {
    "en": "Vine Arrow",
-   "ko": "덩굴 화살"
+   "ko": "덩굴 화살",
+   "icon": "icons/skills/Vine_Arrow.webp"
   },
   {
    "en": "Virtuous Barrier",
-   "ko": "고결한 방어막"
+   "ko": "고결한 방어막",
+   "icon": "icons/skills/Virtuous_Barrier.webp"
   },
   {
    "en": "Vivid Stampede",
-   "ko": "혈기 쇄도"
+   "ko": "혈기 쇄도",
+   "icon": "icons/skills/Vivid_Stampede.webp"
   },
   {
    "en": "Void Illusion",
-   "ko": "공허 환상"
+   "ko": "공허 환상",
+   "icon": "icons/skills/Void_Illusion.webp"
   },
   {
    "en": "Volatile Dead",
-   "ko": "시체 불덩이"
+   "ko": "시체 불덩이",
+   "icon": "icons/skills/Volatile_Dead.webp"
   },
   {
    "en": "Volcanic Fissure",
-   "ko": "화산 균열"
+   "ko": "화산 균열",
+   "icon": "icons/skills/Volcanic_Fissure.webp"
   },
   {
    "en": "Volcano",
-   "ko": "화산"
+   "ko": "화산",
+   "icon": "icons/skills/Volcano.webp"
   },
   {
    "en": "Voltaic Barrier",
-   "ko": "전도성 방어막"
+   "ko": "전도성 방어막",
+   "icon": "icons/skills/Voltaic_Barrier.webp"
   },
   {
    "en": "Voltaic Grenade",
-   "ko": "전도성 유탄"
+   "ko": "전도성 유탄",
+   "icon": "icons/skills/Voltaic_Grenade.webp"
   },
   {
    "en": "Voltaic Mark",
-   "ko": "전도성 징표"
+   "ko": "전도성 징표",
+   "icon": "icons/skills/Voltaic_Mark.webp"
   },
   {
    "en": "Vulnerability",
-   "ko": "취약성"
+   "ko": "취약성",
+   "icon": "icons/skills/Vulnerability.webp"
   },
   {
    "en": "Walking Calamity",
-   "ko": "걸어다니는 대재난"
+   "ko": "걸어다니는 대재난",
+   "icon": "icons/skills/Walking_Calamity.webp"
   },
   {
    "en": "War Banner",
-   "ko": "전쟁 깃발"
+   "ko": "전쟁 깃발",
+   "icon": "icons/skills/War_Banner.webp"
   },
   {
    "en": "Wardbound Minions",
-   "ko": "수호결속 소환수"
+   "ko": "수호결속 소환수",
+   "icon": "icons/skills/Wardbound_Minions.webp"
   },
   {
    "en": "Wave of Frost",
-   "ko": "서리의 파도"
+   "ko": "서리의 파도",
+   "icon": "icons/skills/Wave_of_Frost.webp"
   },
   {
    "en": "Whirling Assault",
-   "ko": "선회 공격"
+   "ko": "선회 공격",
+   "icon": "icons/skills/Whirling_Assault.webp"
   },
   {
    "en": "Whirling Slash",
-   "ko": "소용돌이 베기"
+   "ko": "소용돌이 베기",
+   "icon": "icons/skills/Whirling_Slash.webp"
   },
   {
    "en": "Whirlwind Lance",
-   "ko": "와류 기병창"
+   "ko": "와류 기병창",
+   "icon": "icons/skills/Whirlwind_Lance.webp"
   },
   {
    "en": "Wild Protector",
-   "ko": "야생 보호자"
+   "ko": "야생 보호자",
+   "icon": "icons/skills/Wild_Protector.webp"
   },
   {
    "en": "Wildwood's Gifts",
-   "ko": "야생림의 선물"
+   "ko": "야생림의 선물",
+   "icon": "icons/skills/Wildwoods_Gifts.webp"
   },
   {
    "en": "Wind Blast",
-   "ko": "바람 폭발"
+   "ko": "바람 폭발",
+   "icon": "icons/skills/Wind_Blast.webp"
   },
   {
    "en": "Wind Dancer",
-   "ko": "바람의 무희"
+   "ko": "바람의 무희",
+   "icon": "icons/skills/Wind_Dancer.webp"
   },
   {
    "en": "Wind Serpent's Fury",
-   "ko": "바람 독사의 광분"
+   "ko": "바람 독사의 광분",
+   "icon": "icons/skills/Wind_Serpents_Fury.webp"
   },
   {
    "en": "Wing Blast",
-   "ko": "날개 돌풍"
+   "ko": "날개 돌풍",
+   "icon": "icons/skills/Wing_Blast.webp"
   },
   {
    "en": "Wither",
-   "ko": "위축"
+   "ko": "위축",
+   "icon": "icons/skills/Wither.webp"
   },
   {
    "en": "Withering Presence",
-   "ko": "고사시키는 존재"
+   "ko": "고사시키는 존재",
+   "icon": "icons/skills/Withering_Presence.webp"
   },
   {
    "en": "Wolf Pack",
-   "ko": "늑대 무리"
+   "ko": "늑대 무리",
+   "icon": "icons/skills/Wolf_Pack.webp"
   }
  ]
 }

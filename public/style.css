@@ -73,3 +73,18 @@ button:hover { border-color: var(--gold); }
 .combo li .tag { font-size: 10px; color: var(--ok); border: 1px solid var(--ok); border-radius: 8px; padding: 0 5px; margin-left: 6px; }
 .combo li.empty { color: var(--muted); cursor: default; }
 .budget label { margin-bottom: 2px; }
+
+.combo .sel-icon { position: absolute; left: 6px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px; object-fit: contain; pointer-events: none; }
+.combo input.has-icon { padding-left: 34px; }
+.combo li .opt { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.combo li .opt img, .combo li .opt .noicon { width: 26px; height: 26px; flex: none; object-fit: contain; border-radius: 4px; background: #15130f; }
+.build-icons { display: flex; gap: 6px; margin-bottom: 6px; }
+.build-icons img { width: 36px; height: 36px; object-fit: contain; border-radius: 6px; background: #15130f; border: 1px solid var(--line); }
+.combo li { align-items: center; }
+.combo li .opt { flex: 1 1 auto; }
+.combo li .opt > span:not(.tag) { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.combo li .tag { white-space: nowrap; flex: none; }
+.combo li small { flex: 0 1 auto; max-width: 45%; text-align: right; }
+/* 한글 이름이 우선 보이도록, 줄어드는 건 오른쪽 영문 쪽 */
+.combo li .opt { flex: 0 1 auto; max-width: 78%; }
+.combo li small { flex: 1 1 0; min-width: 0; max-width: none; }

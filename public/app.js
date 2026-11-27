@@ -94,11 +94,16 @@ function highlight(text, q) {
 function combobox(input, getItems, { onPick } = {}) {
   const list = h('ul', { role: 'listbox', hidden: true });
   input.after(list);
+  // 선택된 항목 아이콘 (입력칸 왼쪽)
+  const sel = h('img', { class: 'sel-icon', alt: '', hidden: true });
+  input.before(sel);
+  const showIcon = (src) => { sel.hidden = !src; if (src) sel.src = src; input.classList.toggle('has-icon', !!src); };
+  input.setIcon = showIcon;
   input.setAttribute('role', 'combobox');
   let items = [];
   let active = -1;
   const close = () => { list.hidden = true; active = -1; };
-  const pick = (it) => { input.value = it.ko; input.dataset.en = it.en; close(); onPick?.(it); input.dispatchEvent(new Event('input', { bubbles: true })); };
+  const pick = (it) => { input.value = it.ko; input.dataset.en = it.en; showIcon(it.icon); close(); onPick?.(it); input.dispatchEvent(new Event('input', { bubbles: true })); };
   const render = () => {
     const q = squash(input.value);
     items = getItems()
@@ -108,7 +113,7 @@ function combobox(input, getItems, { onPick } = {}) {
       .slice(0, 40).map((x) => x.it);
     active = items.length ? 0 : -1;
     list.replaceChildren(...(items.length ? items.map((it, i) => h('li', { role: 'option', class: i === active ? 'active' : '', onmousedown: (e) => { e.preventDefault(); pick(it); } },
-      h('span', {}, ...highlight(it.ko, input.value.trim().toLowerCase()), it.featured ? h('span', { class: 'tag' }, it.featured) : null),
+      h('span', { class: 'opt' }, it.icon ? h('img', { src: it.icon, alt: '', loading: 'lazy' }) : h('i', { class: 'noicon' }), h('span', {}, ...highlight(it.ko, input.value.trim().toLowerCase())), it.featured ? h('span', { class: 'tag' }, it.featured) : null),
       h('small', {}, it.sub || it.en))) : [h('li', { class: 'empty' }, '일치하는 항목 없음 (그대로 검색 가능)')]));
     list.hidden = false;
   };
@@ -118,7 +123,7 @@ function combobox(input, getItems, { onPick } = {}) {
     [...list.children].forEach((li, i) => li.classList.toggle('active', i === active));
     list.children[active]?.scrollIntoView({ block: 'nearest' });
   };
-  input.addEventListener('input', (e) => { if (e.isTrusted) delete input.dataset.en; render(); });
+  input.addEventListener('input', (e) => { if (e.isTrusted) { delete input.dataset.en; showIcon(null); } render(); });
   input.addEventListener('focus', render);
   input.addEventListener('blur', () => setTimeout(close, 100));
   input.addEventListener('keydown', (e) => {
@@ -143,7 +148,7 @@ function setupCombos() {
       // 그 직업의 샘플 빌드 스킬로 빈 칸 채우기
       const p = META.profiles.find((x) => x.class === c.en);
       if (!p) return;
-      p.skills.forEach((en, i) => { const inp = f[`skill${i}`]; if (inp && !inp.value) { inp.value = koSkill(en); inp.dataset.en = en; } });
+      p.skills.forEach((en, i) => { const inp = f[`skill${i}`]; if (inp && !inp.value) { inp.value = koSkill(en); inp.dataset.en = en; inp.setIcon?.(KO.skill.get(en)?.icon); } });
     },
   });
   for (const i of [0, 1, 2]) {
@@ -256,6 +261,7 @@ function render() {
   if (!r.ok) return out.replaceChildren(h('div', { class: 'fail' }, r.error));
   const p = r.profile;
   const head = h('div', { class: 'summary' },
+    h('div', { class: 'build-icons' }, [KO.cls.get(p.class)?.icon, ...p.skills.map((sk) => KO.skill.get(sk)?.icon)].filter(Boolean).map((src) => h('img', { src, alt: '' }))),
     h('div', { class: 'profile' }, `빌드 프로필: ${koClass(p.class)} · ${p.skills.map(koSkill).join(' / ') || '-'} (${{ sample: '샘플', user: '업로드', generic: '일반 프로필' }[p.source] || p.source}${p.source === 'generic' ? '' : ` · 표본 ${p.sampleSize ?? '?'}명 · 스킬 ${p.overlap}개 일치`})${r.budgetEx ? ` · 예산 ${fmt(r.budgetEx)} ex` : ''} · ${r.mode === 'mock' ? '데모 매물' : '실시간 매물'} · 검색 ${r.searches}회`),
     r.notes.length ? h('div', { class: 'notes-global' }, r.notes.join(' · ')) : null,
     r.ratesFallback ? h('div', { class: 'notes-global' }, '※ poe.ninja 환율 조회 실패 — 기본 환율로 계산') : null);
