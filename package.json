@@ -1,0 +1,14 @@
+{
+  "name": "poe2lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PoE2 장비 설계 프로토타입 — 목표 능력치를 만족하는 최저가 장비 세트 추천",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "start:mock": "TRADE_MODE=mock node server.js",
+    "test": "node --test test/*.test.js",
+    "verify": "node scripts/verify-trade.js"
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "_note": "프로토타입용 샘플 데이터입니다. 실제 poe.ninja 통계가 아니며, 수치·유니크 사용률은 예시입니다. 같은 스키마의 JSON 을 업로드해 교체할 수 있습니다.",
+  "profiles": [
+    {
+      "id": "sample-deadeye-la",
+      "class": "Deadeye",
+      "skills": [
+        "Lightning Arrow",
+        "Tornado Shot",
+        "Gas Arrow"
+      ],
+      "sampleSize": 1840,
+      "typicalTargets": {
+        "life": 1200,
+        "fireRes": 75,
+        "coldRes": 75,
+        "lightRes": 75,
+        "chaosRes": 20,
+        "moveSpeed": 30
+      },
+      "slots": {
+        "weapon1": {
+          "category": "weapon.bow",
+          "keyMods": [
+            {
+              "text": "+# to Level of all Projectile Skills",
+              "min": 3,
+              "usage": 0.82,
+              "premium": true
+            },
+            {
+              "text": "#% increased Physical Damage",
+              "min": 100,
+              "usage": 0.71
+            }
+          ]
+        },
+        "weapon2": {
+          "category": "armour.quiver",
+          "offhand": true,
+          "keyMods": [
+            {
+              "text": "#% increased Attack Speed",
+              "min": 6,
+              "usage": 0.55
+            }
+          ]
+        },
+        "amulet": {
+          "keyMods": [
+            {
+              "text": "+# to Level of all Projectile Skills",
+              "min": 1,
+              "usage": 0.6,
+              "premium": true
+            }
+          ]
+        },
+        "gloves": {
+          "keyMods": [
+            {
+              "text": "#% increased Attack Speed",
+              "min": 5,
+              "usage": 0.58
+            }
+          ]
+        },
+        "body": {
+          "uniques": [
+            {
+              "name": "Bramblejack",
+              "baseType": "Garment",
+              "usage": 0.12
+            }
+          ]
+        },
+        "charm1": {
+          "baseType": "Thawing Charm"
+        },
+        "charm2": {
+          "baseType": "Staunching Charm"
+        },
+        "charm3": {
+          "baseType": "Dousing Charm"
+        },
+        "flaskLife": {
+          "baseType": "Ultimate Life Flask"
+        },
+        "flaskMana": {
+          "baseType": "Ultimate Mana Flask"
+        }
+      }
+    },
+    {
+      "id": "sample-stormweaver-spark",
+      "class": "Stormweaver",
+      "skills": [
+        "Spark",
+        "Arc",
+        "Orb of Storms"
+      ],
+      "sampleSize": 960,
+      "typicalTargets": {
+        "life": 400,
+        "es": 1800,
+        "mana": 300,
+        "fireRes": 75,
+        "coldRes": 75,
+        "lightRes": 75,
+        "chaosRes": 0,
+        "moveSpeed": 25
+      },
+      "slots": {
+        "weapon1": {
+          "category": "weapon.wand",
+          "keyMods": [
+            {
+              "text": "+# to Level of all Lightning Spell Skills",
+              "min": 3,
+              "usage": 0.77,
+              "premium": true
+            },
+            {
+              "text": "#% increased Spell Damage",
+              "min": 60,
+              "usage": 0.66
+            }
+          ]
+        },
+        "weapon2": {
+          "category": "armour.focus",
+          "offhand": true,
+          "keyMods": [
+            {
+              "text": "+# to Level of all Spell Skills",
+              "min": 1,
+              "usage": 0.52,
+              "premium": true
+            }
+          ]
+        },
+        "amulet": {
+          "uniques": [
+            {
+              "name": "Astramentis",
+              "baseType": "Stellar Amulet",
+              "usage": 0.18
+            }
+          ],
+          "keyMods": [
+            {
+              "text": "+# to Level of all Spell Skills",
+              "min": 2,
+              "usage": 0.74,
+              "premium": true
+            }
+          ]
+        },
+        "charm1": {
+          "baseType": "Thawing Charm"
+        },
+        "charm2": {
+          "baseType": "Grounding Charm"
+        },
+        "charm3": {
+          "baseType": "Dousing Charm"
+        },
+        "flaskLife": {
+          "baseType": "Ultimate Life Flask"
+        },
+        "flaskMana": {
+          "baseType": "Ultimate Mana Flask"
+        }
+      }
+    },
+    {
+      "id": "sample-titan-slam",
+      "class": "Titan",
+      "skills": [
+        "Rolling Slam",
+        "Sunder",
+        "Leap Slam"
+      ],
+      "sampleSize": 610,
+      "typicalTargets": {
+        "life": 1800,
+        "fireRes": 75,
+        "coldRes": 75,
+        "lightRes": 75,
+        "chaosRes": 30,
+        "moveSpeed": 25
+      },
+      "slots": {
+        "weapon1": {
+          "category": "weapon.onemace",
+          "keyMods": [
+            {
+              "text": "+# to Level of all Melee Skills",
+              "min": 2,
+              "usage": 0.69,
+              "premium": true
+            },
+            {
+              "text": "#% increased Physical Damage",
+              "min": 120,
+              "usage": 0.73
+            }
+          ]
+        },
+        "weapon2": {
+          "category": "armour.shield",
+          "offhand": true,
+          "keyMods": []
+        },
+        "body": {
+          "uniques": [
+            {
+              "name": "Kaom's Heart",
+              "baseType": "Glorious Plate",
+              "usage": 0.91
+            }
+          ]
+        },
+        "charm1": {
+          "baseType": "Staunching Charm"
+        },
+        "charm2": {
+          "baseType": "Thawing Charm"
+        },
+        "charm3": {
+          "baseType": "Stone Charm"
+        },
+        "flaskLife": {
+          "baseType": "Ultimate Life Flask"
+        },
+        "flaskMana": {
+          "baseType": "Ultimate Mana Flask"
+        }
+      }
+    },
+    {
+      "id": "sample-gemling-staff",
+      "class": "Gemling Legionnaire",
+      "skills": [
+        "Tempest Flurry",
+        "Ice Strike",
+        "Falling Thunder"
+      ],
+      "sampleSize": 3120,
+      "typicalTargets": {
+        "life": 1100,
+        "fireRes": 75,
+        "coldRes": 75,
+        "lightRes": 75,
+        "chaosRes": 10,
+        "moveSpeed": 30
+      },
+      "slots": {
+        "weapon1": {
+          "category": "weapon.warstaff",
+          "twoHandedMain": true,
+          "keyMods": [
+            {
+              "text": "+# to Level of all Melee Skills",
+              "min": 3,
+              "usage": 0.8,
+              "premium": true
+            },
+            {
+              "text": "#% increased Attack Speed",
+              "min": 15,
+              "usage": 0.62
+            }
+          ]
+        },
+        "weapon2": {
+          "twoHanded": true
+        },
+        "belt": {
+          "uniques": [
+            {
+              "name": "Ingenuity",
+              "baseType": "Utility Belt",
+              "usage": 0.93
+            }
+          ]
+        },
+        "charm1": {
+          "baseType": "Thawing Charm"
+        },
+        "charm2": {
+          "baseType": "Staunching Charm"
+        },
+        "charm3": {
+          "baseType": "Grounding Charm"
+        },
+        "flaskLife": {
+          "baseType": "Ultimate Life Flask"
+        },
+        "flaskMana": {
+          "baseType": "Ultimate Mana Flask"
+        }
+      }
+    }
+  ]
+}
